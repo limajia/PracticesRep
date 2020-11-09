@@ -4,3 +4,32 @@ dialog的style中的很多属性设置 没有看到效果。如dialog的背景�
 2.setContentView view设置margin不会生效？？？？
 
 3.setwindowFloat 设置后 要么是全屏 要么是包裹
+
+
+CountDownView viewById = findViewById(R.id.my_count_down_view);
+    viewById.setExampleString("sdfsfsdfsf");
+
+    viewById.postDelayed(new Runnable() {
+    @Override
+    public void run() {
+        // reusme 后重新绘制了 才会出现更新后的文案
+        viewById.setExampleString("shaaaaaaaaaaaaaaaaaa");
+        // 不执行invalide方法的话，旋转屏幕或者触发重新绘制 才会出现更新后的文案
+    }
+}, 5000);
+
+
+@Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int mode = MeasureSpec.getMode(heightMeasureSpec);
+        if (mode == MeasureSpec.AT_MOST) {
+            Log.d(TAG, "onMeasure: ");
+            int screenSize = this.getResources().getDisplayMetrics().heightPixels;
+            // 小米手机和华为手机 或者的高度不一样 前者不包括状态栏 或者包括状态栏
+            Log.d(TAG, "screenSize: " + screenSize);
+        }
+
+        int size = MeasureSpec.getSize(heightMeasureSpec);
+        Log.d(TAG, "onMeasure() called with: mode = [" + mode + "], heightMeasureSpec = [" + size + "]");
+    }
