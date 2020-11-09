@@ -17,7 +17,20 @@
     <uses-permission android:name="com.example.broadcast.permission" />///
     <application
       ......
+2.权限的重复请求 会导致上一次的请求cancel，结果列表为null
 
+
+        getWindow().getDecorView().postDelayed(runnable, 3000);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1000) {
+        // 会走取消
+            Log.d("", "onRequestPermissionsResult() called with: requestCode = [" + requestCode + "], permissions = [" + permissions + "], grantResults = [" + grantResults + "]");
+        }
+    }
 
 问题：
 静态接收者-接收不到系统的网络变化广播？？？

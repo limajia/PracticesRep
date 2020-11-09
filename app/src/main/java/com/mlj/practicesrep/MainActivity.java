@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
+import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,12 @@ public class MainActivity extends AppCompatActivity {
         View broadCastTestBtn = findViewById(R.id.broadCastTestBtn);
         broadCastTestBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, BroadCastActivity.class);
+            startActivity(intent);
+        });
+        //2.
+        View customDialogTestBtn = findViewById(R.id.customDialogTestBtn);
+        customDialogTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CustomDialogActivity.class);
             startActivity(intent);
         });
     }

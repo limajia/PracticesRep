@@ -5,18 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".customdialog.CustomDialogActivity">
 
     <Button
-        android:id="@+id/broadCastTestBtn"
+        android:id="@+id/openDialog"
+        android:onClick="openDialog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="广播test" />
-
-    <Button
-        android:id="@+id/customDialogTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CustomDialogtest" />
+        android:layout_height="40dp"
+        android:text="打开dialog" />
 
 </LinearLayout>

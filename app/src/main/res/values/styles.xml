@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <!--        <item name="android:windowIsTranslucent">false</item>-->
+        <!--        &lt;!&ndash;设置背景透明&ndash;&gt;-->
+        <!--        <item name="android:windowBackground">@android:color/holo_red_dark</item> 这个没有作用不知道什么意思 -->
+        <!--设置dialog浮与activity上面-->
+        <item name="android:windowIsFloating">false</item>
+        <!--        // true 不能找到父容器的大小了 false可以找到-->
+        <!--去掉背景模糊效果-->
+        <!--        <item name="android:backgroundDimEnabled">true</item>-->
+        <!--        <item name="android:backgroundDimAmount">1</item>-->
+
+        <item name="android:windowNoTitle">true</item>
+        <!--        &lt;!&ndash;去掉边框&ndash;&gt;-->
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <!--    <style name="parentDialogStyle" parent="@android:style/Theme.Dialog">-->
+    <!--        <item name="android:windowIsFloating">false</item>-->
+    <!--    </style>-->
+</resources>
