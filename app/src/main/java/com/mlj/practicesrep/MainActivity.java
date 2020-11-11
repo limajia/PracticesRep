@@ -10,10 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
+import com.mlj.practicesrep.player.playerActivity;
 
+/**
+ * @author docker
+ */
 public class MainActivity extends AppCompatActivity {
 
     private Button mAnimationDrawTestBtn;
+    private Button mIjkplayerTestBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +49,14 @@ public class MainActivity extends AppCompatActivity {
         // 看来是没有改原来View的属性，单独维护TranslationY值，在绘制的时候，添加这个offset。点击的位置矩阵也跟着变化了。
         // view动画 也是这样的原理，但是没有修改点击的位置矩阵
         // property动画，则同时修改了位置矩阵
+        //4
+        mIjkplayerTestBtn = findViewById(R.id.ijkplayerTestBtn);
+        mIjkplayerTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, playerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
