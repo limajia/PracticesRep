@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="广播test"
+        android:textAllCaps="false"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -18,18 +19,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CustomDialogtest"
+        android:textAllCaps="false"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/animationDrawTestBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/ijkplayerTestBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ijkplayerTestBtn"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/bottomSheetDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bottomSheetDialogTestBtn"
+        android:textAllCaps="false"
         tools:ignore="HardcodedText" />
 
 </LinearLayout>

@@ -20,4 +20,25 @@
     <!--    <style name="parentDialogStyle" parent="@android:style/Theme.Dialog">-->
     <!--        <item name="android:windowIsFloating">false</item>-->
     <!--    </style>-->
+
+    <style name="BottomSheetDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置dialog浮与activity上面-->
+        <item name="android:windowIsFloating">true</item>
+        // true的话 dialog的状态栏在下面一起修改了 。false的话，需要动态设置window的statusbar的color
+        <!--        // true 不能找到父容器的大小了 false可以找到-->
+        <!--去掉背景模糊效果-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+
+        <item name="android:windowBackground">#00ffffff</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--        &lt;!&ndash;去掉边框&ndash;&gt;-->
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <style name="annimation_custom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
 </resources>
