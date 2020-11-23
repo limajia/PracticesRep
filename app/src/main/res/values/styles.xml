@@ -35,6 +35,7 @@
         <item name="android:windowNoTitle">true</item>
         <!--        &lt;!&ndash;去掉边框&ndash;&gt;-->
         <item name="android:windowFrame">@null</item>
+        <item name="android:windowAnimationStyle">@style/annimation_custom</item>// 这里修改动画
     </style>
 
     <style name="annimation_custom" parent="android:Animation">
