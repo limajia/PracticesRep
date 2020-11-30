@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -33,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //0
+        View root = findViewById(R.id.root_view);
+        root.setEnabled(false);
+        root.setClickable(false); // 子view不受影响 就是自己不处理onTouchEvent方法事件了 其他的事件照样传递
+        root.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
         //1.
         View broadCastTestBtn = findViewById(R.id.broadCastTestBtn);
         broadCastTestBtn.setOnClickListener(v -> {
