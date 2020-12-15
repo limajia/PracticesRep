@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".player.playerActivity"></activity>
+        <activity android:name=".mvppattern.MvpActivity"></activity>
+        <activity android:name=".player.playerActivity" />
         <activity android:name=".customdialog.CustomDialogActivity" />
 
         <receiver android:name=".broadcast.StaticReceiver">

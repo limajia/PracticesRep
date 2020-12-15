@@ -23,5 +23,21 @@ public class ExampleUnitTest1 {
             System.out.println(sparseArray.keyAt(i));
         }
     }
+
+
+    class AA {
+        // --不写构造函数--的时候，会默认有一个无参数的构造函数
+        // 如果写了构造函数，就没有了默认构造函数
+        public AA(String ab) {
+
+        }
+    }
+
+    class BB extends AA {
+        //  父类有了有参数的构造函数后 必须 调用有参数的super 除非写了无参数的构造方法
+        public BB(String ab) {
+            super(ab);
+        }
+    }
 }
 

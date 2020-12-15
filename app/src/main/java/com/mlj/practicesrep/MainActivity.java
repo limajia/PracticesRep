@@ -20,6 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
+import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.player.playerActivity;
 
 /**
@@ -61,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
         // 2020-11-11 11:13:58.146 13975-13975/com.mlj.practicesrep D/docker----: 288
         mAnimationDrawTestBtn = findViewById(R.id.animationDrawTestBtn);
         mAnimationDrawTestBtn.postDelayed(() -> {
-            Log.d("docker", mAnimationDrawTestBtn.getTop() + "");
+           /* Log.d("docker", mAnimationDrawTestBtn.getTop() + "");
             mAnimationDrawTestBtn.setTranslationY(400);
-            Log.d("docker----", mAnimationDrawTestBtn.getTop() + "");
+            Log.d("docker----", mAnimationDrawTestBtn.getTop() + "");*/
         }, 3000);
 
         // 看来是没有改原来View的属性，单独维护TranslationY值，在绘制的时候，添加这个offset。点击的位置矩阵也跟着变化了。
@@ -118,6 +119,13 @@ public class MainActivity extends AppCompatActivity {
             mDialogBehavior.setPeekHeight(getPeekHeight());
 //            bottomSheetDialog.setDismissWithAnimation(true); exit强制使用下滑消失动画
             bottomSheetDialog.show();
+        });
+
+        // 6 mvp设计模式
+        View mvpTestBtn = findViewById(R.id.mvpTestBtn);
+        mvpTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MvpActivity.class);
+            startActivity(intent);
         });
     }
 
