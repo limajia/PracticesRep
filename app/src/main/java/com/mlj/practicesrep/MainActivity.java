@@ -22,6 +22,7 @@ import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.player.playerActivity;
+import com.mlj.practicesrep.touchevent.EventActivity;
 
 /**
  * @author docker
@@ -125,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
         View mvpTestBtn = findViewById(R.id.mvpTestBtn);
         mvpTestBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MvpActivity.class);
+            startActivity(intent);
+        });
+        // 7 touchEvnetTest事件传递
+        View eventTest = findViewById(R.id.touchEvnetTest);
+        eventTest.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, EventActivity.class);
             startActivity(intent);
         });
     }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mlj.practicesrep.touchevent.RootView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parents"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.mlj.practicesrep.touchevent.MyLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.mlj.practicesrep.touchevent.MyLayout1
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.mlj.practicesrep.touchevent.RootView>
