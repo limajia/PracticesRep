@@ -1,8 +1,12 @@
 package com.mlj.practicesrep;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -13,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +28,10 @@ import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.player.playerActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
+
+import java.io.File;
+import java.io.IOException;
+import java.security.Permissions;
 
 /**
  * @author docker
@@ -178,5 +187,50 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d("docker", "onResume() called");
+        //
+
+        int i = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        Log.d("docker", "权限" + i);
+        if (i != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
+            }
+        }else {
+            ///https://www.jianshu.com/p/9155a0ff0726
+            // Android 10 不能在内存根目录创建文件夹的问题 不同系统不同适配 使用不同的可访问的路径即可 不是非得是同一个目录
+            String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
+            File newFile = new File(absolutePath + "/abc.text");
+            try {
+                newFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        File newFile = new File(absolutePath + "/abc.text");
+        try {
+            newFile.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //
+//        不要在onResume中申请权限
+        //进入页面时会弹出一个权限申请弹框，如果点击允许一切正常，如果点击拒绝，会重新弹出权限申请对话框，一直拒绝的话会一直弹出。如果点击拒绝并且不再提醒，不会继续弹框，但是页面返回按钮不响应，观察日志发现onResume中请求权限的代码循环执行。
+        // 拒绝的话会重复执行onpause 和 onresume
+        //解决棒法：
+//        解决办法：
+//        1.使用flag设置标志位，申请权限只执行一次，
+//        2.在onStart中请求权限。
+        // https://blog.csdn.net/u010457514/article/details/100518834
+
+        //
+    }
+
 }
