@@ -52,11 +52,20 @@
         android:text="mvpTest"
         android:textAllCaps="false"
         tools:ignore="HardcodedText" />
+
     <Button
         android:id="@+id/touchEvnetTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="touchEvnetTest"
+        android:textAllCaps="false"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/scrollerTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="scrollerTest"
         android:textAllCaps="false"
         tools:ignore="HardcodedText" />
 

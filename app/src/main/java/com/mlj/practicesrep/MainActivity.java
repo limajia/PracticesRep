@@ -27,11 +27,11 @@ import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.player.playerActivity;
+import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 
 import java.io.File;
 import java.io.IOException;
-import java.security.Permissions;
 
 /**
  * @author docker
@@ -138,11 +138,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         // 7 touchEvnetTest事件传递
-        View eventTest = findViewById(R.id.touchEvnetTest);
-        eventTest.setOnClickListener(view -> {
+        View eventTestBtn = findViewById(R.id.touchEvnetTest);
+        eventTestBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, EventActivity.class);
             startActivity(intent);
         });
+        // 8 scrollerTest 滑动帮助类理解
+        View scrollerTestBtn = findViewById(R.id.scrollerTest);
+        scrollerTestBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ScrollerTestActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     /**
@@ -196,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
             }
-        }else {
+        } else {
             ///https://www.jianshu.com/p/9155a0ff0726
             // Android 10 不能在内存根目录创建文件夹的问题 不同系统不同适配 使用不同的可访问的路径即可 不是非得是同一个目录
             String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
