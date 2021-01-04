@@ -1,12 +1,12 @@
-package com.mlj.practicesrep.scrollertest;
+package com.mlj.practicesrep.scrollertest.btn;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
-public class CustomViewGroup extends RelativeLayout {
+public class CustomViewGroup extends LinearLayout {
     private static final String TAG = "CustomViewGroup";
 
     public CustomViewGroup(Context context) {

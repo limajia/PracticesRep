@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mlj.practicesrep.scrollertest.CustomViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+<com.mlj.practicesrep.scrollertest.btn.CustomViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".scrollertest.ScrollerTestActivity">
 
-    <com.mlj.practicesrep.scrollertest.CustomView
+    <com.mlj.practicesrep.scrollertest.btn.CustomView
         android:id="@+id/custom_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="测试是思思是SOHO是哦售后送" />
 
-</com.mlj.practicesrep.scrollertest.CustomViewGroup>
+    <com.mlj.practicesrep.scrollertest.Case1ViewGroup
+        android:id="@+id/case1ViewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</com.mlj.practicesrep.scrollertest.btn.CustomViewGroup>
