@@ -25,6 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
+import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.player.playerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
@@ -147,6 +148,12 @@ public class MainActivity extends AppCompatActivity {
         View scrollerTestBtn = findViewById(R.id.scrollerTest);
         scrollerTestBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ScrollerTestActivity.class);
+            startActivity(intent);
+        });
+        // 9 lottieAnimaTest lottie动画测试
+        View lottieAnimaTestBtn = findViewById(R.id.lottieAnimaTest);
+        lottieAnimaTestBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, LottieTestActivity.class);
             startActivity(intent);
         });
 
