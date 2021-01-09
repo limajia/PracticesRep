@@ -30,12 +30,18 @@ public class MyAnimationView extends LottieAnimationView {
         setRepeatCount(LottieDrawable.INFINITE);
         setImageAssetsFolder("images/");
         LottieCompositionFactory.fromAsset(getContext(), "data.json").addListener(this::setComposition);
+
+        setOnClickListener(v -> {
+            setProgress(1.0f);
+            cancelAnimation();
+        }); // 结束在了半路上 而不是pause的停住
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         playAnimation();
+        setProgress(1.0f);
     }
 
     @Override
