@@ -92,7 +92,7 @@ public class Case1ViewGroup extends ViewGroup {
         }
         scrollTo(targetIndex * getWidth(), getScrollY());
         mCurrentIndex = targetIndex;
-        invalidate();
+//        invalidate(); ?? 为什么要重绘 不重绘也是没有问题的
     }
 
     /**

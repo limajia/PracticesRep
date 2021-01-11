@@ -11,7 +11,15 @@
         android:id="@+id/custom_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="测试是思思是SOHO是哦售后送" />
+        android:text="测试Translation按钮"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/Case1TestBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Case1TestBtn"
+        android:textAllCaps="false" />
 
     <com.mlj.practicesrep.scrollertest.Case1ViewGroup
         android:id="@+id/case1ViewGroup"
