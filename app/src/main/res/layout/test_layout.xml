@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/cardview_dark_background" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="59dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/view1"
+        android:background="@color/design_default_color_error" />
+
+    <!--    // 相对布局不能够 决定布局的权重 占多的比例 这样的属性-->
+    <!--    左右layout_to的属性都不可以-->
+
+</RelativeLayout>
