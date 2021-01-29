@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#cccccc"
+    android:gravity="end"
+    android:orientation="horizontal">
+
+    <!--    <View-->
+    <!--        android:id="@+id/view1"-->
+    <!--        android:layout_width="30dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:background="@color/cardview_dark_background" />-->
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="start"
+        android:background="@color/design_default_color_error" />
+
+    <!--    // 线性布局中 子View中添加 android:layout_gravity="center_vertical" 的属性-->
+    <!--    只会和 LinearLayout android:orientation="horizontal" 不同方向 起作用，同方向是不起作用的 -->
+
+    <!-- 但是   相同方向的控制 可以在外层父布局的LinearLayout上进行设置gravity属性。
+    如果内外都设置的话，不同方向上，以内部的为主。
+                    相同方向上，以外部的为主。
+    LinearLayout android:orientation="horizontal" 是否相同的方向 是和这个属性进行比较
+    -->
+
+
+</LinearLayout>
