@@ -9,7 +9,51 @@
     <SurfaceView
         android:id="@+id/surface_view"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/change_size_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/scale_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scale"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/change_size_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/alpha_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/scale_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/mmmmmmmmmmmm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/surface_view" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="水电费合适的反馈是分开交首付款闪电发货客户"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintTop_toBottomOf="@id/mmmmmmmmmmmm" />
+    <!--    需改布局属性会跟着走
+    设置评议 缩放 View.animate 不会跟着走 说明动画没有改变 布局属性
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
