@@ -156,6 +156,22 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, LottieTestActivity.class);
             startActivity(intent);
         });
+        // 10 logdtest 测试
+        View logdTestBtn = findViewById(R.id.logdtest);
+        logdTestBtn.setOnClickListener(view -> {
+            Log.d("docker11", "输出日志了 ");
+            // android 提供的这个工具 在debug 和release 都可以看到日志。应是去除了 打包类型的判断
+            // 想要去掉的方式1.在工具类上添加 类型判断进行输出 2.在混淆文件中将日志工具类方法移除掉
+            //-assumenosideeffects class android.util.Log{
+            //    public static *** v(...);
+            //    public static *** i(...);
+            //    public static *** d(...);
+            //    public static *** w(...);
+            //    public static *** e(...);
+            //}
+            // 参考网址为：https://blog.csdn.net/hp910315/article/details/52488474?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control
+        });
+
 
     }
 
