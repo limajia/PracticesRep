@@ -96,6 +96,7 @@ public class MyLayout1 extends LinearLayout implements View.OnTouchListener {
     //D/malijia:  shangbian--dispatchTouchEvent()
     //D/malijia: shangbian---onInterceptTouchEvent()
     //D/gggmmm: onTouch: 0
+
     //D/malijia: activity- dispatchTouchEvent:
     //D/malijia:  rootView--dispatchTouchEvent()
     //D/malijia: rootView---onInterceptTouchEvent()
@@ -103,6 +104,7 @@ public class MyLayout1 extends LinearLayout implements View.OnTouchListener {
     //D/gggmmm: onTouch: 2
     //D/malijia: shangbian---onTouchEvent()
     //D/malijia: activity- onTouchEvent:
+
     //D/malijia: activity- dispatchTouchEvent:
     //D/malijia:  rootView--dispatchTouchEvent()
     //D/malijia: rootView---onInterceptTouchEvent()
@@ -111,7 +113,8 @@ public class MyLayout1 extends LinearLayout implements View.OnTouchListener {
     //D/malijia: shangbian---onTouchEvent()
     //D/malijia: activity- onTouchEvent:
 
-// 4.   onInterceptTouchEvent 和ontouchEvtne 得陪着使用，若果只拦截了，只是截断子view的传递，如果拦截的View不处理ONtouchevent，还是后续流程传递，activity的ontoucheEVENT等。
+// 4.   onInterceptTouchEvent 和ontouchEvtne 得陪着使用，若果只拦截了，只是截断子view的传递，
+// 如果拦截的View不处理ONtouchevent，还是后续流程传递，activity的ontoucheEVENT等。
 //    rootView 拦截所有的事件
     //D/malijia: activity- dispatchTouchEvent:
     //D/malijia:  rootView--dispatchTouchEvent()
@@ -233,4 +236,29 @@ public class MyLayout1 extends LinearLayout implements View.OnTouchListener {
     //        return super.onInterceptTouchEvent(ev);
 
 //    子类会印象父类是否执行的结果 onInterceptTouchEvent先于 onTouch执行，只能在一个手势中的前一个动作中，来控制下一个动作。
+
+    //9. 父布局处理了down事件 OnTouchEvent中返回了down的true 后续直走到父布局这里了  其他的事件不重要 重要的是down事件
+    //D/malijia: activity- dispatchTouchEvent: 0
+    //D/malijia:  rootView--dispatchTouchEvent()0
+    //D/malijia: rootView---onInterceptTouchEvent()0
+    //D/malijia:  shangbian--dispatchTouchEvent()0
+    //D/malijia: shangbian---onInterceptTouchEvent()0
+    //D/malijia: shangbian--onTouch: 0
+    //D/malijia: shangbian---onTouchEvent()0
+    //D/malijia:  xiabian--dispatchTouchEvent()
+    //D/malijia: xiabian---onInterceptTouchEvent()
+    //D/malijia: xiabian---onTouchEvent()
+    //D/malijia: rootView---onTouchEvent()0
+    //D/malijia: activity- dispatchTouchEvent: 2
+    //D/malijia:  rootView--dispatchTouchEvent()2
+    //D/malijia: rootView---onTouchEvent()2
+    //D/malijia: activity- onTouchEvent: 2
+    //D/malijia: activity- dispatchTouchEvent: 2
+    //D/malijia:  rootView--dispatchTouchEvent()2
+    //D/malijia: rootView---onTouchEvent()2
+    //D/malijia: activity- onTouchEvent: 2
+    //D/malijia: activity- dispatchTouchEvent: 1
+    //D/malijia:  rootView--dispatchTouchEvent()1
+    //D/malijia: rootView---onTouchEvent()1
+    //D/malijia: activity- onTouchEvent: 1
 }
