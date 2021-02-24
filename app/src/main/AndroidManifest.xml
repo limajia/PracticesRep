@@ -21,7 +21,7 @@
         <activity android:name=".scrollertest.ScrollerTestActivity" />
         <activity android:name=".touchevent.EventActivity" />
         <activity android:name=".mvppattern.MvpActivity" />
-        <activity android:name=".player.playerActivity" />
+        <activity android:name=".player.PlayerActivity" />
         <activity android:name=".customdialog.CustomDialogActivity" />
 
         <receiver android:name=".broadcast.StaticReceiver">

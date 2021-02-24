@@ -2,6 +2,7 @@ package com.mlj.practicesrep.player;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -14,7 +15,8 @@ import com.mlj.practicesrep.R;
 
 import java.io.IOException;
 
-public class playerActivity extends AppCompatActivity {
+public class PlayerActivity extends AppCompatActivity {
+    private static final String TAG = "PlayerActivity1111";
 
     private MediaPlayer mMediaPlayer;
     private SurfaceView mSurfaceView;
@@ -69,6 +71,8 @@ public class playerActivity extends AppCompatActivity {
         mSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(@NonNull SurfaceHolder holder) {
+                //已经回收了的话 获取焦点 就会重建
+                Log.d(TAG, "surfaceCreated: ");
                 // 创建MediaPlayer调用的是create方法，第一次启动播放前 不需要再调用prepare()，如果是使用构造方法构造的
                 // 话，则需要调用一次prepare()方法
 
@@ -87,12 +91,14 @@ public class playerActivity extends AppCompatActivity {
 
             @Override
             public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-
+                // 缩放不会走这里 平移参数改变后会走这里
+                Log.d(TAG, "surfaceChanged: ");
             }
 
             @Override
             public void surfaceDestroyed(@NonNull SurfaceHolder holder) {
-
+                // activity 失去焦点 就会destroy删除
+                Log.d(TAG, "surfaceDestroyed: ");
             }
         });
 

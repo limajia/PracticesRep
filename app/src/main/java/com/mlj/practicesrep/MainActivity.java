@@ -27,7 +27,7 @@ import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
-import com.mlj.practicesrep.player.playerActivity;
+import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 
@@ -81,14 +81,14 @@ public class MainActivity extends AppCompatActivity {
         // 看来是没有改原来View的属性，单独维护TranslationY值，在绘制的时候，添加这个offset。点击的位置矩阵也跟着变化了。
         // view动画 也是这样的原理，但是没有修改点击的位置矩阵
         // property动画，则同时修改了位置矩阵
-        //4
+        //4 ijkplayerTest
         mIjkplayerTestBtn = findViewById(R.id.ijkplayerTestBtn);
         mIjkplayerTestBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, playerActivity.class);
+            Intent intent = new Intent(MainActivity.this, PlayerActivity.class);
             startActivity(intent);
         });
 
-        // 5.
+        // 5.bottomSheetDialog
         final View bottomSheetDialogBtn = findViewById(R.id.bottomSheetDialog);
         bottomSheetDialogBtn.setOnClickListener(v -> {
             View view = View.inflate(MainActivity.this, R.layout.view_bottom_sheet_dialog, null);
