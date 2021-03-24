@@ -25,6 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
+import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
@@ -170,6 +171,15 @@ public class MainActivity extends AppCompatActivity {
             //    public static *** e(...);
             //}
             // 参考网址为：https://blog.csdn.net/hp910315/article/details/52488474?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control
+        });
+        //11 customView 测试
+        View customViewTestBtn = findViewById(R.id.customViewTest);
+        customViewTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CustomViewActivity.class);
+                startActivity(intent);
+            }
         });
 
 

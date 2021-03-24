@@ -1,88 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/broadCastTestBtn"
+    <LinearLayout
+        android:id="@+id/root_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="广播test"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/customDialogTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CustomDialogtest"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/broadCastTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="广播test"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/animationDrawTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/customDialogTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CustomDialogtest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/ijkplayerTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ijkplayerTestBtn"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/animationDrawTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bottomSheetDialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="bottomSheetDialogTestBtn"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/ijkplayerTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ijkplayerTestBtn"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/mvpTestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="mvpTest"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/bottomSheetDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bottomSheetDialogTestBtn"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/touchEvnetTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="touchEvnetTest"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/mvpTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mvpTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/scrollerTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="scrollerTest"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/touchEvnetTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="touchEvnetTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/lottieAnimaTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="lottieAnimaTest"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/scrollerTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="scrollerTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/logdtest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="logdtest"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/lottieAnimaTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lottieAnimaTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/logdtest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="logdTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/customViewTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="customViewTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</ScrollView>
