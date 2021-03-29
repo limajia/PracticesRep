@@ -28,6 +28,7 @@ import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
+import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
@@ -179,6 +180,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CustomViewActivity.class);
                 startActivity(intent);
+            }
+        });
+        //12 overAnimationTest 测试
+        View overAnimationTestBtn = findViewById(R.id.overAnimationTest);
+        overAnimationTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestOverAnimationActivity.class);
+                startActivity(intent);
+                // 实现淡入浅出的效果
+                // overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                // 由左向右滑入的效果
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                // 实现zoommin 和 zoomout (自定义的动画)  MainActivity 会执行R.anim.zoom_out 下一个activity会执行R.anim.zoom_in
+                // 只要这一个进入的过程会执行 activity的其他的阶段 不会执行
+                // overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
             }
         });
 

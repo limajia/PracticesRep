@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".customview.CustomViewActivity"></activity>
+        <activity android:name=".overtransitionanim.TestOverAnimationActivity"></activity>
+        <activity android:name=".customview.CustomViewActivity" />
         <activity android:name=".lottietest.LottieTestActivity" />
         <activity android:name=".scrollertest.ScrollerTestActivity" />
         <activity android:name=".touchevent.EventActivity" />

@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ccc"
+    android:orientation="vertical"
     tools:context=".customview.CustomViewActivity">
 
-    <com.mlj.practicesrep.customview.TestView
+    <com.mlj.practicesrep.customview.draw.TestView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <com.mlj.practicesrep.customview.DashboardView
+    <com.mlj.practicesrep.customview.draw.DashboardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <com.mlj.practicesrep.customview.PieView
+    <com.mlj.practicesrep.customview.draw.PieView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <com.mlj.practicesrep.customview.AvatarView
+    <com.mlj.practicesrep.customview.draw.AvatarView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <com.mlj.practicesrep.customview.SportView
+    <com.mlj.practicesrep.customview.draw.SportView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <com.mlj.practicesrep.customview.MultilineTextView
+    <com.mlj.practicesrep.customview.draw.MultilineTextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
@@ -52,5 +54,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:hint="UserName"
+        android:visibility="gone"
         app:useFloatingLabel="true" />
-</FrameLayout>
+
+    <com.mlj.practicesrep.customview.layout.SquareImageView
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+</LinearLayout>
