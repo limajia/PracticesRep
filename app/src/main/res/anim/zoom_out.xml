@@ -2,6 +2,17 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:interpolator="@android:anim/decelerate_interpolator"
     android:zAdjustment="top">
+
+    <!--安卓转场 默认的 短 中 长 时间动画时长是多少-->
+    <!--&lt;!&ndash; The duration (in milliseconds) of a short animation. &ndash;&gt;
+    <integer name="config_shortAnimTime">200</integer>
+
+    &lt;!&ndash; The duration (in milliseconds) of a medium-length animation. &ndash;&gt;
+    <integer name="config_mediumAnimTime">400</integer>
+
+    &lt;!&ndash; The duration (in milliseconds) of a long animation. &ndash;&gt;
+    <integer name="config_longAnimTime">500</integer>
+-->
     <scale
         android:duration="@android:integer/config_mediumAnimTime"
         android:fromXScale="1.0"
