@@ -105,5 +105,13 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:id="@+id/viewMainFunsTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="viewMainFunsTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 </ScrollView>

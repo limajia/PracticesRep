@@ -32,6 +32,7 @@ import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
+import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -196,6 +197,15 @@ public class MainActivity extends AppCompatActivity {
                 // 实现zoommin 和 zoomout (自定义的动画)  MainActivity 会执行R.anim.zoom_out 下一个activity会执行R.anim.zoom_in
                 // 只要这一个进入的过程会执行 activity的其他的阶段 不会执行
                 // overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
+            }
+        });
+        //13 viewMainFunsTest 测试
+        View viewMainFunsTestBtn = findViewById(R.id.viewMainFunsTest);
+        viewMainFunsTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestViewMainFunsActivity.class);
+                startActivity(intent);
             }
         });
 
