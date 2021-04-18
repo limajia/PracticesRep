@@ -1,4 +1,4 @@
-package com.mlj.practicesrep.customview;
+package com.mlj.practicesrep.customview.draw;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,7 +12,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public class MultilineTextView extends View {
-
+    //    Lorem ipsum
     String text = "Vestibulum non congue nisl. Vivamus porta rhoncus dolor " +
             "imperdiet laoreet. Praesent id libero nunc. Aenean maximus erat " +
             "sed nibh dapibus, at lobortis lorem scelerisque. Etiam sodales ipsum " +

@@ -3,7 +3,7 @@ package com.mlj.practicesrep.quanxiantest.aa;
 import com.mlj.practicesrep.quanxiantest.bb.classb;
 
 // 外部类只能有 default 和public的访问权限
-// 内部类可以四个权限和static修饰
+// 内部类可以四个权限和static修饰【看成类的一个方法 好理解】
 public class classa {
 
     //1.外部类修饰符
@@ -16,7 +16,7 @@ public class classa {
 
     void fun() {
         // assss.privateval // 不可以访问
-        // assss.defaultval // 挎包了 不可以访问  挎包访问就是通过对象 或 静态方法
+        // assss.defaultval // 挎包了 不可以访问  挎包访问就是通过对象 或 静态方法 [default 同包其他类访问，同包子类访问]
         // assss.protectedtval // 不可访问  protectd 是同包的其他类访问  和 不同包的子类访问
     }
 }
