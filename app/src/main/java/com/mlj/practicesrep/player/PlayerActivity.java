@@ -56,6 +56,20 @@ public class PlayerActivity extends AppCompatActivity {
                 testButton.setScaleY(offset1[0]);
             }
         });
+
+        //改visibility
+        View changeBtnVisible = findViewById(R.id.change_visibility_btn);
+        changeBtnVisible.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int result = View.VISIBLE;
+                if (mSurfaceView.getVisibility() == View.VISIBLE) {
+                    result = View.GONE;
+                }
+                mSurfaceView.setVisibility(result);
+            }
+        });
+
         //alpha 是无效
         View alphabtn = findViewById(R.id.alpha_btn);
         final float[] offset2 = {1};
@@ -63,7 +77,7 @@ public class PlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 offset2[0] -= 0.1;
-//                mSurfaceView.setAlpha(offset2[0]);
+                //mSurfaceView.setAlpha(offset2[0]);
                 mSurfaceView.animate().translationYBy(-10).setDuration(1000).start(); // 这个是有效的
                 testButton.animate().translationYBy(-10).setDuration(1000).start(); // 这个是有效的
             }
@@ -72,21 +86,26 @@ public class PlayerActivity extends AppCompatActivity {
             @Override
             public void surfaceCreated(@NonNull SurfaceHolder holder) {
                 //已经回收了的话 获取焦点 就会重建
-                Log.d(TAG, "surfaceCreated: ");
+                Log.d(TAG, "surfaceCreated: holder = " + holder.toString());
                 // 创建MediaPlayer调用的是create方法，第一次启动播放前 不需要再调用prepare()，如果是使用构造方法构造的
                 // 话，则需要调用一次prepare()方法
 
                 // MediaPlayer mediaPlayer = new MediaPlayer();
                 //mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC); 音频加类型
-                mMediaPlayer = new MediaPlayer();
+                if (mMediaPlayer == null) {
+                    mMediaPlayer = new MediaPlayer();
+                }
+                // holder是同一个对象 但是每次Create以后，都要重新设置到player中  但是每次gone 和visible 都会重新播放
+                mMediaPlayer.setDisplay(holder);
                 try {
-                    mMediaPlayer.setDisplay(holder);
-                    mMediaPlayer.setDataSource("https://v-cdn.zjol.com.cn/280443.mp4");
-                    mMediaPlayer.prepare();
+                    if (!mMediaPlayer.isPlaying()) {
+                        mMediaPlayer.setDataSource("https://v-cdn.zjol.com.cn/280443.mp4");
+                        mMediaPlayer.prepare();
+                        mMediaPlayer.start();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                mMediaPlayer.start();
             }
 
             @Override

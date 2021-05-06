@@ -1,2 +1,3 @@
+include ':ThreadTestLib'
 include ':app'
 rootProject.name = "PracticesRep"
