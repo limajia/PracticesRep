@@ -208,7 +208,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //14 restartAppTest 测试
+        View restartAppTestBtn = findViewById(R.id.restartAppTest);
+        restartAppTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                getBaseContext().startActivity(intent);
+                android.os.Process.killProcess(android.os.Process.myPid());
+            }
+        });
 
     }
 
