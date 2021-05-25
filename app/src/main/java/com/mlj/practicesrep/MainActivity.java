@@ -1,6 +1,7 @@
 package com.mlj.practicesrep;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -24,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
+import com.mlj.practicesrep.clickviewgroup.TestClickViewGroupActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
@@ -219,6 +221,15 @@ public class MainActivity extends AppCompatActivity {
                 android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
+        //15 clickViewGroupTest 测试
+        View clickViewGroupTestBtn = findViewById(R.id.clickViewGroupTest);
+        clickViewGroupTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestClickViewGroupActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -276,8 +287,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             ///https://www.jianshu.com/p/9155a0ff0726
             // Android 10 不能在内存根目录创建文件夹的问题 不同系统不同适配 使用不同的可访问的路径即可 不是非得是同一个目录
-            String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
-            File newFile = new File(absolutePath + "/abc.text");
+//            String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
+            File newFile = new File(getSDPath(MainActivity.this) + "/abc.text");
             try {
                 newFile.createNewFile();
             } catch (IOException e) {
@@ -285,6 +296,22 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    public static String getSDPath(Context context) {
+        File sdDir = null;
+        boolean sdCardExist = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);// 判断sd卡是否存在
+        if (sdCardExist) {
+            if (Build.VERSION.SDK_INT >= 29) {
+                //Android10之后
+                sdDir = context.getExternalFilesDir(null);//获取应用所在根目录/Android/data/your.app.name/file/ 也可以根据沙盒机制传入自己想传的参数，存放在指定目录
+            } else {
+                sdDir = Environment.getExternalStorageDirectory();// 获取SD卡根目录
+            }
+        } else {
+            sdDir = Environment.getRootDirectory();// 获取跟目录
+        }
+        return sdDir.toString();
     }
 
     @Override

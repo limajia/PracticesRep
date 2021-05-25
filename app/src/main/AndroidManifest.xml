@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".viewmainfun.TestViewMainFunsActivity"></activity>
+        <activity android:name=".clickviewgroup.TestClickViewGroupActivity"></activity>
+        <activity android:name=".viewmainfun.TestViewMainFunsActivity" />
         <activity android:name=".overtransitionanim.TestOverAnimationActivity" />
         <activity android:name=".customview.CustomViewActivity" />
         <activity android:name=".lottietest.LottieTestActivity" />
