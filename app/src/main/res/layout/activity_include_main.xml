@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include_out_id"
+        layout="@layout/activity_include_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+    <!-- 1.include标签 使内层layout属性失效
+     前提条件是 外层也设置了对应的layout的属性-->
+
+    <!--
+    如上：android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    内层的
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+    失效了-->
