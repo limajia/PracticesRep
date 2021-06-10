@@ -3,7 +3,10 @@ package com.mlj.practicesrep.tabhosttest;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TabHost;
+
+import androidx.annotation.NonNull;
 
 import com.mlj.practicesrep.R;
 
@@ -18,6 +21,7 @@ import com.mlj.practicesrep.R;
 2.继承ActivityGroup，关联tabhost
 */
 public class TabHostTestActivity extends TabActivity {
+    private static final String TAG = "TabHostTestActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +59,15 @@ public class TabHostTestActivity extends TabActivity {
         TabHost.TabSpec tabSpec2 = tabHost.newTabSpec("tab3").setIndicator("我").setContent(new Intent(this, Tab3Activity.class));
         tabHost.addTab(tabSpec2);
          /*
-        // 切换
+        // 打开页面
         Tab1Activity: onCreate:
         Tab1Activity: onStart:
+        TabHostTestActivity: onCreate:
+        TabHostTestActivity: onStart:
         Tab1Activity: onResume:
+        TabHostTestActivity: onResume:
+
+        // 切换
         Tab1Activity: onPause:
         Tab2Activity: onCreate:
         Tab2Activity: onStart:
@@ -66,20 +75,89 @@ public class TabHostTestActivity extends TabActivity {
 
         退后台
         D/Tab2Activity: onPause:
+        D/TabHostTestActivity: onPause:
         D/Tab1Activity: onStop:
         D/Tab2Activity: onStop:
+        D/TabHostTestActivity: onStop:
+        D/TabHostTestActivity: onSaveInstanceState:
 
         重新打开
+        D/TabHostTestActivity: onRestart:
+        D/TabHostTestActivity: onStart:
         D/Tab2Activity: onRestart:
         D/Tab2Activity: onStart:
-        D/Tab2Activity: onResume
+        D/Tab2Activity: onResume:
+        D/TabHostTestActivity: onResume:
+        // start resume 内外的activity好像没有特别的规律性的关系
 
         切换
         D/Tab2Activity: onPause:
         D/Tab1Activity: onRestart: //这里
         D/Tab1Activity: onStart:
         D/Tab1Activity: onResume:
+
+        finish
+        D/Tab1Activity: onPause:
+        D/TabHostTestActivity: onPause:
+        D/Tab1Activity: onStop:
+        D/Tab2Activity: onStop:
+        D/TabHostTestActivity: onStop:
+        D/Tab1Activity: onDestroy:
+        D/Tab2Activity: onDestroy:
+        D/TabHostTestActivity: onDestroy:
+
+        // 始终没有打开的tab3 activity 始终不会参与进来
         */
 
+        Log.d(TAG, "onCreate: ");
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d(TAG, "onRestoreInstanceState: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+
 }
