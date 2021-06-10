@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -25,14 +24,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
-import com.mlj.practicesrep.clickviewgroup.TestClickViewGroupActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
+import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
+import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
 
@@ -221,12 +221,23 @@ public class MainActivity extends AppCompatActivity {
                 android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
-        //15 clickViewGroupTest 测试
-        View clickViewGroupTestBtn = findViewById(R.id.clickViewGroupTest);
-        clickViewGroupTestBtn.setOnClickListener(new View.OnClickListener() {
+
+        //15 includeTest 测试
+        View includeTestBtn = findViewById(R.id.includeTest);
+        includeTestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TestClickViewGroupActivity.class);
+                Intent intent = new Intent(MainActivity.this, IncludeTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //16 clickViewGroupTest 测试
+        View tabhostTest = findViewById(R.id.tabHostTest);
+        tabhostTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TabHostTestActivity.class);
                 startActivity(intent);
             }
         });
@@ -299,7 +310,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String getSDPath(Context context) {
-        File sdDir = null;
+
+       /* File sdDir = null;
         boolean sdCardExist = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);// 判断sd卡是否存在
         if (sdCardExist) {
             if (Build.VERSION.SDK_INT >= 29) {
@@ -311,13 +323,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             sdDir = Environment.getRootDirectory();// 获取跟目录
         }
-        return sdDir.toString();
+        return sdDir.toString();*/
+        return "";
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
+//        String absolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String absolutePath = "";
         File newFile = new File(absolutePath + "/abc.text");
         try {
             newFile.createNewFile();

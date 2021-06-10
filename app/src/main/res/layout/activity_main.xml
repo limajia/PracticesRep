@@ -137,5 +137,13 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:id="@+id/tabHostTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tabHostTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 </ScrollView>

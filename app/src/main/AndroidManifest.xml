@@ -17,7 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".includetest.IncludeTestActivity"></activity>
+        <activity android:name=".tabhosttest.Tab3Activity"></activity>
+        <activity android:name=".tabhosttest.Tab2Activity" />
+        <activity android:name=".tabhosttest.Tab1Activity" />
+        <activity android:name=".tabhosttest.TabHostTestActivity" />
+        <activity android:name=".includetest.IncludeTestActivity" />
         <activity android:name=".clickviewgroup.TestClickViewGroupActivity" />
         <activity android:name=".viewmainfun.TestViewMainFunsActivity" />
         <activity android:name=".overtransitionanim.TestOverAnimationActivity" />
