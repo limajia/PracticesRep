@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
@@ -238,6 +239,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TabHostTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //17 binderTest
+        View binderTest = findViewById(R.id.binderTest);
+        binderTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BinderTestActivity.class);
                 startActivity(intent);
             }
         });
