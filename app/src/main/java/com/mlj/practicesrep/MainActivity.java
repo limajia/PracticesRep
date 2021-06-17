@@ -253,6 +253,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //17 asmTest
+        View asmTest = findViewById(R.id.asmTest);
+        asmTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BinderTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     /**
