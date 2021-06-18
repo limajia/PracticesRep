@@ -1,3 +1,5 @@
+//include ':buildSrc' // 不删除的话 会报错 'buildSrc' cannot be used as a project name as it is a reserved name
+include ':gradlepluginandasm'
 include ':lib'
 include ':ThreadTestLib'
 include ':app'
