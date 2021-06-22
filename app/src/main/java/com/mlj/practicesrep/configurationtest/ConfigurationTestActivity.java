@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.mlj.practicesrep.R;
 
-public class ConfigurationTestActivity extends AppCompatActivity {
+public class ConfigurationTestActivity extends BaseConfigurationActivity {
     private static final String TAG = "docker11111";
     private Button mTestButton;
 

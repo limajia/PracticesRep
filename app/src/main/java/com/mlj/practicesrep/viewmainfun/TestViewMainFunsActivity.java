@@ -37,7 +37,7 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
 
 // 11创建完成
 
-D/ViewMainFunsView11: ViewMainFunsView() called with: context = [com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity@1cb4b24], attrs = [android.content.res.XmlBlock$Parser@cca9ca7]
+        D/ViewMainFunsView11: ViewMainFunsView() called with: context = [com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity@1cb4b24], attrs = [android.content.res.XmlBlock$Parser@cca9ca7]
         D/ViewMainFunsView11: onFinishInflate() called
         D/ViewMainFunsView11: onAttachedToWindow() called
         D/ViewMainFunsView11: onWindowVisibilityChanged() called with: visibility = [0]
