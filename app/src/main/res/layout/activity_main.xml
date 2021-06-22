@@ -161,5 +161,12 @@
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
 
+        <Button
+            android:id="@+id/configurationTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="configurationTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </ScrollView>

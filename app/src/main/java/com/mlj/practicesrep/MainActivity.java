@@ -25,6 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
+import com.mlj.practicesrep.configurationtest.ConfigurationTestActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
@@ -253,12 +254,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //17 asmTest
+        //18 asmTest
         View asmTest = findViewById(R.id.asmTest);
         asmTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BinderTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //19 configurationTest 测试旋转屏幕
+        View configurationTest = findViewById(R.id.configurationTest);
+        configurationTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ConfigurationTestActivity.class);
                 startActivity(intent);
             }
         });

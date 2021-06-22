@@ -17,7 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <!--:remote 包名+:remote 否则全局的名称为 指定词 单个词是不可以的 需要有个.  .com com不可以 -->
+        <activity
+            android:name=".configurationtest.ConfigurationTestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+
+        </activity>
+        <!-- :remote 包名+:remote 否则全局的名称为 指定词 单个词是不可以的 需要有个.  .com com不可以 -->
         <service
             android:name=".bindertest.server.RemoteService"
             android:enabled="true"
@@ -25,11 +30,10 @@
             android:process=":remote">
             <intent-filter>
                 <action android:name="com.docker.ipc" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </service>
-        <!-- android:process=":remote"-->
-
+        </service> <!-- android:process=":remote" -->
         <activity android:name=".bindertest.client.BinderTestActivity" />
         <activity android:name=".tabhosttest.Tab3Activity" />
         <activity android:name=".tabhosttest.Tab2Activity" />
