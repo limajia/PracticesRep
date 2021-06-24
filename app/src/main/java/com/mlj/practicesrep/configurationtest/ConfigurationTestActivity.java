@@ -1,5 +1,6 @@
 package com.mlj.practicesrep.configurationtest;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import com.mlj.practicesrep.R;
 public class ConfigurationTestActivity extends BaseConfigurationActivity {
     private static final String TAG = "docker11111";
     private Button mTestButton;
+    private Button mJumpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,11 @@ public class ConfigurationTestActivity extends BaseConfigurationActivity {
         layoutParams.height = 200;
         layoutParams.width = 1500;
         mTestButton.setLayoutParams(layoutParams);
+        //
+        mJumpBtn = findViewById(R.id.jumpBtn);
+        mJumpBtn.setOnClickListener(v -> {
+            startActivity(new Intent(ConfigurationTestActivity.this, AnotherConfigurationActivity.class));
+        });
     }
 
     @Override
@@ -31,7 +38,26 @@ public class ConfigurationTestActivity extends BaseConfigurationActivity {
         super.onConfigurationChanged(newConfig);
         Log.d(TAG, "onConfigurationChanged: ");
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
+    }
 }
+
 /*
 
         “mcc“ 移动国家号码，由三位数字组成，每个国家都有自己独立的MCC，可以识别手机用户所属国家。

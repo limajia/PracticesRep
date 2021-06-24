@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <!-- 给基类设置config是不生效的-->
+        <activity android:name=".configurationtest.AnotherConfigurationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <!-- 给基类设置config是不生效的 -->
         <activity android:name=".configurationtest.BaseConfigurationActivity" />
         <activity
             android:name=".configurationtest.ConfigurationTestActivity"

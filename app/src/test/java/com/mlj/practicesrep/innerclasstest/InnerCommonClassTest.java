@@ -21,7 +21,7 @@ public class InnerCommonClassTest {
 
     private class InnerClass {
 
-//        private static short ss;
+//        private stati c short ss;
 
         void testA() {
 
