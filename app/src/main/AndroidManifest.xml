@@ -17,14 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".configurationtest.AnotherConfigurationActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
-        <!-- 给基类设置config是不生效的 -->
+        <activity android:name=".fragmentt.FragmentTestActivity"></activity>
+        <activity
+            android:name=".configurationtest.AnotherConfigurationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" /> <!-- 给基类设置config是不生效的 -->
         <activity android:name=".configurationtest.BaseConfigurationActivity" />
         <activity
             android:name=".configurationtest.ConfigurationTestActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
-        <!-- :remote 包名+:remote 否则全局的名称为 指定词 单个词是不可以的 需要有个.  .com com不可以 -->
+            android:configChanges="orientation|keyboardHidden|screenSize" /> <!-- :remote 包名+:remote 否则全局的名称为 指定词 单个词是不可以的 需要有个.  .com com不可以 -->
         <service
             android:name=".bindertest.server.RemoteService"
             android:enabled="true"

@@ -28,6 +28,7 @@ import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.configurationtest.ConfigurationTestActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
+import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
@@ -270,6 +271,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ConfigurationTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        //20 FragmentTest 测试Fragment的一些属性
+        View fragmentTest = findViewById(R.id.fragementTest);
+        fragmentTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FragmentTestActivity.class);
                 startActivity(intent);
             }
         });

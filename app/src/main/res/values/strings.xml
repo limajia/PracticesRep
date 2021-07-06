@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PracticesRep</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_one_fragment">Hello one fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_two_fragment">Hello two fragment</string>
 </resources>

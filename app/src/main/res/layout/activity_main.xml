@@ -168,5 +168,13 @@
             android:text="configurationTest"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/fragementTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fragementTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </ScrollView>
