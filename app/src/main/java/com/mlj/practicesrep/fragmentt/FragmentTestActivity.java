@@ -268,3 +268,4 @@ D/FragmentTwo: onResume: */
         D/FragmentTestActivity: onDestroy:
 */
 //创建完成后后面的周期方法就会绑定一起顺序执行
+// Home键的时候 APP会走 onPause 和 onStop 生命周期 别让了onStop
