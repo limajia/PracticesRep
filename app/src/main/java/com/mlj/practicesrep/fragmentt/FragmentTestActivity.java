@@ -2,6 +2,7 @@ package com.mlj.practicesrep.fragmentt;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentTestActivity extends AppCompatActivity {
+    
+    private static final String TAG = "FragmentTwo11";
+    
     List<BaseFragment> fragmentList = new ArrayList<BaseFragment>() {
         {
             add(FragmentOne.newInstance("", ""));
@@ -27,6 +31,7 @@ public class FragmentTestActivity extends AppCompatActivity {
 
     private Button mChangefrag1;
     private int index;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,10 +86,47 @@ public class FragmentTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.content_view,fragmentList.get((index++)%2));
+                fragmentTransaction.replace(R.id.content_view, fragmentList.get((index++) % 2));
                 fragmentTransaction.commitNowAllowingStateLoss();
             }
         });
+        Log.d(TAG, "onCreate: ");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
     }
 }
 
@@ -179,3 +221,50 @@ D/FragmentTwo: onResume: */
 //* 了解到 这个方法 提交的fragment是不会被添加到 FragmentManager's back stack
 //**/
 //public abstract void commitNowAllowingStateLoss();/
+
+
+
+// activity的不同生命周期函数中添加Fragment 生命周期执行
+//在Create中添加fragment
+/*      D/FragmentTestActivity: onCreate:
+        D/FragmentTwo: onAttach:
+        D/FragmentTwo: onCreate:
+        D/FragmentTwo: onCreateView:
+        D/FragmentTwo: onViewCreated:
+        D/FragmentTwo: onActivityCreated:
+        D/FragmentTwo: onViewStateRestored:
+        D/FragmentTwo: onStart:
+        D/FragmentTestActivity: onStart:
+        D/FragmentTestActivity: onResume:
+        D/FragmentTwo: onResume:
+        D/FragmentTwo: onPause:
+        D/FragmentTestActivity: onPause:
+        D/FragmentTwo: onStop:
+        D/FragmentTestActivity: onStop:
+        D/FragmentTwo: onDestroyView:
+        D/FragmentTwo: onDestroy:
+        D/FragmentTwo: onDetach:
+        D/FragmentTestActivity: onDestroy:*/
+
+//在Resume中添加fragment
+       /* D/FragmentTestActivity: onCreate:
+        D/FragmentTestActivity: onStart:
+        D/FragmentTestActivity: onResume:
+        D/FragmentTwo: onAttach:
+        D/FragmentTwo: onCreate:
+        D/FragmentTwo: onCreateView: //只是自己的一个一个顺序执行的方法
+        D/FragmentTwo: onViewCreated:
+        D/FragmentTwo: onActivityCreated:
+        D/FragmentTwo: onViewStateRestored:
+        D/FragmentTwo: onStart:
+        D/FragmentTwo: onResume:
+        D/FragmentTwo: onPause:
+        D/FragmentTestActivity: onPause:
+        D/FragmentTwo: onStop:
+        D/FragmentTestActivity: onStop:
+        D/FragmentTwo: onDestroyView:
+        D/FragmentTwo: onDestroy:
+        D/FragmentTwo: onDetach:
+        D/FragmentTestActivity: onDestroy:
+*/
+//创建完成后后面的周期方法就会绑定一起顺序执行
