@@ -2,6 +2,35 @@ plugins {
     id 'com.android.application'
 }
 
+class MyTestPlugin implements Plugin<Project> {
+    @Override
+    void apply(Project project) {
+        println("MyTestPlugin 插件这样就可以运行了")
+    }
+}// groovy中可以使用java语言
+apply plugin:MyTestPlugin
+
+
+// 带扩展的插件
+class MyTestPluginExt implements Plugin<Project> {
+    @Override
+    void apply(Project app) {
+        def extension = app.extensions.create("dockername", MyTestPluginExtension)
+        app.afterEvaluate {
+            println "hello ${extension.name}"
+        }
+    }
+}
+apply plugin:MyTestPluginExt
+
+class MyTestPluginExtension{
+    def name ="docker"
+}
+
+dockername {
+    name ="修改了名字的人"
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"

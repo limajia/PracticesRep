@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mlj.practicesrep.R;
 
@@ -14,6 +15,7 @@ public class FragmentTwo extends BaseFragment {
 
     private String mParam1;
     private String mParam2;
+    private TextView mFragementTwoTv;
 
     public FragmentTwo() {
     }
@@ -40,6 +42,15 @@ public class FragmentTwo extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.doCreateView();
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_two, container, false);
+        mFragementTwoTv = rootView.findViewById(R.id.fragementTwo_tv);
+        return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mFragementTwoTv.getParent();
+        // 可以一直找到activity的原始布局
     }
 }
