@@ -21,10 +21,11 @@ public class InnerCommonClassTest {
 
     private class InnerClass {
 
-//        private stati c short ss;
+//        private static short ss;
 
         void testA() {
-
+//            outValue
+//              outerFun();
         }
 
 //        public static void testB() {}
@@ -32,7 +33,7 @@ public class InnerCommonClassTest {
 
         // 不可以【创建】静态的成员
 
-        // 可以【访问】外部的静态和非静态成员
+        // 可以【访问】外部的静态和非静态成员(方法)
     }
 }
 
