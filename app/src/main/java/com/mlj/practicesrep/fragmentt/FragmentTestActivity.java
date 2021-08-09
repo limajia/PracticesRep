@@ -1,5 +1,6 @@
 package com.mlj.practicesrep.fragmentt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentTestActivity extends AppCompatActivity {
-    
+
     private static final String TAG = "FragmentTwo11";
-    
+
     List<BaseFragment> fragmentList = new ArrayList<BaseFragment>() {
         {
             add(FragmentOne.newInstance("", ""));
@@ -36,6 +37,16 @@ public class FragmentTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_test2);
+        // 跳转ViewPager
+        View goToViewPager = findViewById(R.id.gotoViewPager);
+        goToViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FragmentTestActivity.this, ViewpagerFragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+        //
         mChangefrag = findViewById(R.id.changefrag);
         //
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -221,7 +232,6 @@ D/FragmentTwo: onResume: */
 //* 了解到 这个方法 提交的fragment是不会被添加到 FragmentManager's back stack
 //**/
 //public abstract void commitNowAllowingStateLoss();/
-
 
 
 // activity的不同生命周期函数中添加Fragment 生命周期执行

@@ -8,7 +8,7 @@ class MyTestPlugin implements Plugin<Project> {
         println("MyTestPlugin 插件这样就可以运行了")
     }
 }// groovy中可以使用java语言
-apply plugin:MyTestPlugin
+apply plugin: MyTestPlugin
 
 
 // 带扩展的插件
@@ -21,14 +21,15 @@ class MyTestPluginExt implements Plugin<Project> {
         }
     }
 }
-apply plugin:MyTestPluginExt
 
-class MyTestPluginExtension{
-    def name ="docker"
+apply plugin: MyTestPluginExt
+
+class MyTestPluginExtension {
+    def name = "docker"
 }
 
 dockername {
-    name ="修改了名字的人"
+    name = "修改了名字的人"
 }
 
 android {
@@ -76,4 +77,6 @@ dependencies {
     //
     implementation 'com.airbnb.android:lottie:3.0.7'
     compileOnly "com.android.tools.build:gradle:4.0.1"
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+
 }

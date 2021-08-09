@@ -12,20 +12,31 @@
 
         <Button
             android:id="@+id/changefrag"
-            android:text="切换hide show"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:text="切换hide show" />
+
         <Button
             android:id="@+id/changefrag1"
-            android:text="切换replace"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:text="切换replace" />
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/content_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/gotoViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="#ccc"
+        android:text="跳转ViewPager测试"
+        android:textAllCaps="false" />
 </LinearLayout>

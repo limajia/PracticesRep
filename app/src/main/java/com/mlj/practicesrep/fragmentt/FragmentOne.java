@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mlj.practicesrep.R;
 
@@ -41,6 +42,9 @@ public class FragmentOne extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.doCreateView();
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_one, container, false);
+        TextView textView = inflate.findViewById(R.id.content_text);
+        textView.setText(mParam1);
+        return inflate;
     }
 }

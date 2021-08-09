@@ -8,9 +8,10 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/content_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="15dp"
-        android:text="@string/hello_one_fragment" />
+        android:text="@string/hello_one_fragment"
+        android:textSize="15dp" />
 
 </FrameLayout>

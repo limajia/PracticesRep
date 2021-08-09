@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class BaseFragment extends Fragment {
-    private final String TAG = this.getClass().getSimpleName();
+    private final String TAG = "docker:" + this.toString();
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -24,7 +24,7 @@ public class BaseFragment extends Fragment {
         Log.d(TAG, "onCreate: ");
     }
 
-    public void doCreateView(){
+    public void doCreateView() {
         Log.d(TAG, "onCreateView: ");
     }
 
