@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".fragmentt.ViewpagerFragmentActivity"></activity>
+        <activity android:name=".nestedscrolltopattract.NestedScrollAndTopAttractActivity"></activity>
+        <activity android:name=".fragmentt.ViewpagerFragmentActivity" />
         <activity android:name=".fragmentt.FragmentTestActivity" />
         <activity
             android:name=".configurationtest.AnotherConfigurationActivity"

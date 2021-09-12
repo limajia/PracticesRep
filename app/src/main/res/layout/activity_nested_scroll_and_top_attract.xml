@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nestedscrolltopattract.NestedScrollAndTopAttractActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 在AppBarLayout里面放了两个View，其中一个设置scrollFlags，一个没有设置。没有设置的是不会折叠的。-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#ff0000"
+            android:minWidth="80dp"
+            app:layout_scrollFlags="scroll" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#FF00FF" />
+
+        <!--toolbar可以实现部分不折叠-->
+        <!-- <androidx.appcompat.widget.Toolbar
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="120dp"
+             android:minHeight="50dp"
+             app:contentInsetEnd="0dp"
+             app:contentInsetLeft="0dp"
+             app:contentInsetRight="0dp"
+             app:contentInsetStart="0dp"
+             app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="#ff0000">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:text="sdfhldasfhsfhslfhasklfhadslkhfadslfhlsafslkafjlsdkjflsajfljsa" />
+             </RelativeLayout>
+
+         </androidx.appcompat.widget.Toolbar>-->
+    </com.google.android.material.appbar.AppBarLayout>
+    <!--NestedScrollView——>设置layout_behavior属性-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAppBarData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

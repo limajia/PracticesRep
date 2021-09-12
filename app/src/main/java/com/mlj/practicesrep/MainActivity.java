@@ -32,6 +32,7 @@ import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
+import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
@@ -280,6 +281,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FragmentTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        //21 NestedScrollAndTopAttractTest
+        View nestedScrollAndTopAttractTest = findViewById(R.id.NestedScrollAndTopAttractTest);
+        nestedScrollAndTopAttractTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NestedScrollAndTopAttractActivity.class);
                 startActivity(intent);
             }
         });
