@@ -30,6 +30,7 @@ import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
+import com.mlj.practicesrep.leakcanary.LeakCanaryTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
@@ -290,6 +291,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, NestedScrollAndTopAttractActivity.class);
+                startActivity(intent);
+            }
+        });
+        //21 leakCanaryTest
+        View leakCanaryTest = findViewById(R.id.leakCanaryTest);
+        leakCanaryTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LeakCanaryTestActivity.class);
                 startActivity(intent);
             }
         });

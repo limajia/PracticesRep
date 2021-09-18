@@ -184,5 +184,13 @@
             android:text="NestedScrollAndTopAttractTest"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/leakCanaryTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="leakCanaryTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </ScrollView>
