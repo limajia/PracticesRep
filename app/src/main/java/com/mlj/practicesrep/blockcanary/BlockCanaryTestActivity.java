@@ -17,6 +17,7 @@ import hugo.weaving.DebugLog;
 //生命周期 不doframe  查看frame 中断的位置，就是耗时的位置，看cpu运行时间，和整个观察端的时间
 
 //Android性能优化—TraceView的使用 1.profier 2.代码systrace
+// traceView图 如何查看 https://www.jianshu.com/p/7e9ca2c73c97
 @DebugLog
 public class BlockCanaryTestActivity extends AppCompatActivity {
 
