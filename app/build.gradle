@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
 }
 
+apply plugin: 'com.jakewharton.hugo'
+
 class MyTestPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
@@ -84,4 +86,7 @@ dependencies {
 //    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 //    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
 
+    // blockCanary
+    debugCompile 'com.github.markzhai:blockcanary-android:1.5.0'
+    releaseCompile 'com.github.markzhai:blockcanary-no-op:1.5.0'
 }

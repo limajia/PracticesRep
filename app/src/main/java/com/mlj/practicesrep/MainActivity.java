@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
+import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.configurationtest.ConfigurationTestActivity;
@@ -294,12 +295,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //21 leakCanaryTest
+        //22 leakCanaryTest
         View leakCanaryTest = findViewById(R.id.leakCanaryTest);
         leakCanaryTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LeakCanaryTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        //23 blockCanaryTest
+        View blockCanaryTest = findViewById(R.id.blockCanaryTest);
+        blockCanaryTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BlockCanaryTestActivity.class);
                 startActivity(intent);
             }
         });
