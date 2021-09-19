@@ -200,5 +200,13 @@
             android:text="blockCanaryTest"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/intentServiceTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="intentServiceTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </ScrollView>

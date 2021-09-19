@@ -31,6 +31,7 @@ import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
+import com.mlj.practicesrep.intentservice.IntentServiceTestActivity;
 import com.mlj.practicesrep.leakcanary.LeakCanaryTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
@@ -310,6 +311,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BlockCanaryTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        //24 intentServiceTest
+        View intentServiceTest = findViewById(R.id.intentServiceTest);
+        intentServiceTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, IntentServiceTestActivity.class);
                 startActivity(intent);
             }
         });
