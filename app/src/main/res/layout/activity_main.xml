@@ -208,5 +208,13 @@
             android:text="intentServiceTest"
             android:textAllCaps="false"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/sqlliteTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sqlliteTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </ScrollView>

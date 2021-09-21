@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".intentservice.IntentServiceTestActivity"></activity>
+        <activity android:name=".sqllite.SqlLiteTestTestActivity"></activity>
+        <activity android:name=".intentservice.IntentServiceTestActivity" />
         <activity android:name=".blockcanary.BlockCanaryTestActivity" />
         <activity android:name=".leakcanary.LeakCanaryTestActivity" />
         <activity android:name=".nestedscrolltopattract.NestedScrollAndTopAttractActivity" />

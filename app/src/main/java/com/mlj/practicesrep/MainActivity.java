@@ -39,6 +39,7 @@ import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActi
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
+import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
@@ -320,6 +321,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, IntentServiceTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        //25 sqlliteTest
+        View sqlliteTest = findViewById(R.id.sqlliteTest);
+        sqlliteTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SqlLiteTestTestActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,11 +10,18 @@ import com.github.moduth.blockcanary.BlockCanaryContext;
 
 public class App extends Application {
 
+    private static Application context;
+
+    public static Application getApp() {
+        return context;
+    }
+
     private Handler handler;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        context = this;
         handler = new Handler(getMainLooper());
 
         //1.6 老版本 进程检测
