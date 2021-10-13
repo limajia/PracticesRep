@@ -13,6 +13,8 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
 
     private Button mAddAnotherView;
     private LinearLayout mRooterView;
+    boolean hasAdded;
+    private ViewMainFunsView22 viewMainFunsView22;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +24,18 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
         mRooterView = findViewById(R.id.rooter_view);
         // 这个xml已经inflate完了，想自己处理，则自己定义view，到view中去监听那个回调
         mAddAnotherView.setOnClickListener(v -> {
-            ViewMainFunsView22 viewMainFunsView = new ViewMainFunsView22(
-                    TestViewMainFunsActivity.this);
-            ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT);
-            mRooterView.addView(viewMainFunsView, params);
+            if (!hasAdded) {
+                viewMainFunsView22 = new ViewMainFunsView22(
+                        TestViewMainFunsActivity.this);
+                ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT);//若是400 看home回来
+                mRooterView.addView(viewMainFunsView22, params);
+                hasAdded = true;
+            } else {
+                mRooterView.removeView(viewMainFunsView22);
+                hasAdded = false;
+            }
         });
     }
 }
@@ -74,7 +82,7 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
 
         D/ViewMainFunsView11: onWindowVisibilityChanged() called with: visibility = [0]
         D/ViewMainFunsView22: onWindowVisibilityChanged() called with: visibility = [0]
-        D/ViewMainFunsView22: onDraw() called with: canvas = [android.graphics.RecordingCanvas@2cf7ac8] // 最上面的绘制一下
+        D/ViewMainFunsView22: onDraw() called with: canvas = [android.graphics.RecordingCanvas@2cf7ac8] // 最上面的绘制一下 若22不是全部盖住 则11也会执行onDraw
         D/ViewMainFunsView11: onWindowFocusChanged() called with: hasWindowFocus = [true]
         D/ViewMainFunsView22: onWindowFocusChanged() called with: hasWindowFocus = [true]
 
@@ -85,4 +93,13 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
         D/ViewMainFunsView22: onWindowVisibilityChanged() called with: visibility = [8]
         D/ViewMainFunsView11: onDetachedFromWindow() called
         D/ViewMainFunsView22: onDetachedFromWindow() called
+
+// 执行remove22 看看生命周期的变化。
+D/ViewMainFunsView22: onWindowVisibilityChanged() called with: visibility = [8] //removeView都会执行这里
+D/ViewMainFunsView22: onDetachedFromWindow() called //removeView都会执行这里
+D/ViewMainFunsView11: onMeasure() called with: widthMeasureSpec = [1073742904], heightMeasureSpec = [1073743939]
+D/ViewMainFunsView11: onSizeChanged() called with: w = [1080], h = [2115], oldw = [1080], oldh = [1715]
+D/ViewMainFunsView11: onLayout() called with: changed = [true], left = [0], top = [0], right = [1080], bottom = [2115]
+D/ViewMainFunsView11: onDraw() called with: canvas = [android.graphics.RecordingCanvas@336eeb1]
+D/ViewMainFunsView11: onDraw() called with: canvas = [android.graphics.RecordingCanvas@2753764]
 */
