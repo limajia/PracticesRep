@@ -56,3 +56,19 @@ android:orientation="vertical">
     结论match_parent 比权重weight更重要，不论层级，都是先渲染match_parent
 </LinearLayout>
 -->
+
+
+<!--
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+<View
+    android:layout_width="match_parent"
+    android:background="#ff0000"
+    android:layout_height="match_parent"></View>  这种情况父亲wrap_content 子match_parent 也是 这个View占满了
+<View
+    android:background="#ffff00"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"></View>
+</LinearLayout>-->
