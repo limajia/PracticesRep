@@ -30,3 +30,29 @@
 
 
 </LinearLayout>
+
+
+    <!--===============================================================================-->
+<!--
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#cccccc"
+android:gravity="end"
+android:orientation="vertical">
+
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#ff0000" />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff00" />
+
+    结论match_parent 比权重weight更重要，不论层级，都是先渲染match_parent
+</LinearLayout>
+-->
