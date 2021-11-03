@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+//写入数据的顺序和读出数据的顺序必须是相同的. 类似于Android的parcelable
 public class Father implements Externalizable {
 
     private transient String parentName;
