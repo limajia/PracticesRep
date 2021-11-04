@@ -42,6 +42,7 @@ import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
+import com.mlj.practicesrep.translucentTest.TranslucentActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
 
 import java.io.File;
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 26 半透明测试
+        View translucentTestBtn = findViewById(R.id.translucentTestBtn);
+        translucentTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TranslucentActivity.class);
+            startActivity(intent);
+        });
         //0
         View root = findViewById(R.id.root_view);
         root.setEnabled(false);

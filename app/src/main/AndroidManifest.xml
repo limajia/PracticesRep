@@ -18,7 +18,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".sqllite.SqlLiteTestTestActivity"></activity>
+        <activity
+            android:name=".translucentTest.TranslucentTopActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".translucentTest.TranslucentActivity"
+            android:exported="false" />
+        <activity android:name=".sqllite.SqlLiteTestTestActivity" />
         <activity android:name=".intentservice.IntentServiceTestActivity" />
         <activity android:name=".blockcanary.BlockCanaryTestActivity" />
         <activity android:name=".leakcanary.LeakCanaryTestActivity" />

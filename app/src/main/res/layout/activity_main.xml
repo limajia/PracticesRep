@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/translucentTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="透明activity测试"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/broadCastTestBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
