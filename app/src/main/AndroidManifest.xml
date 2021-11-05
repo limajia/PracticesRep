@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".hooktest.HookTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".translucentTest.TranslucentTopActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />

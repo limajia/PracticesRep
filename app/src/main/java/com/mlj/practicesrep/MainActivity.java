@@ -30,6 +30,7 @@ import com.mlj.practicesrep.configurationtest.ConfigurationTestActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
+import com.mlj.practicesrep.hooktest.HookTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.intentservice.IntentServiceTestActivity;
 import com.mlj.practicesrep.leakcanary.LeakCanaryTestActivity;
@@ -60,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 27 Hook测试
+        View hookTestBtn = findViewById(R.id.hookTestBtn);
+        hookTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HookTestActivity.class);
+            startActivity(intent);
+        });
         // 26 半透明测试
         View translucentTestBtn = findViewById(R.id.translucentTestBtn);
         translucentTestBtn.setOnClickListener(v -> {
