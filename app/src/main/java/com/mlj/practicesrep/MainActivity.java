@@ -46,6 +46,7 @@ import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 import com.mlj.practicesrep.translucentTest.TranslucentActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
+import com.mlj.practicesrep.viewpagesetcurrent.ViewPagerCurrentPageTestActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 28 viewPagerSetCurrntPage_test_btn测试
+        View currentPageBtn = findViewById(R.id.viewPagerSetCurrntPage_test_btn);
+        currentPageBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ViewPagerCurrentPageTestActivity.class);
+            startActivity(intent);
+        });
         // 27 float_test_btn测试
         View floatBtnTestBtn = findViewById(R.id.float_test_btn);
         floatBtnTestBtn.setOnClickListener(v -> {
