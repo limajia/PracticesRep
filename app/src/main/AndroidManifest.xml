@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".sonparnesviewtest.SonParentViewTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".viewpagesetcurrent.ViewPagerCurrentPageTestActivity"
             android:exported="false" />
         <activity

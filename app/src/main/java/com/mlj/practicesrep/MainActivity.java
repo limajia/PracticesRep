@@ -41,6 +41,7 @@ import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActi
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
+import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
@@ -63,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 29 son parents布局测试
+        View sonParentTest = findViewById(R.id.sonParentView_test_btn);
+        sonParentTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SonParentViewTestActivity.class);
+            startActivity(intent);
+        });
         // 28 viewPagerSetCurrntPage_test_btn测试
         View currentPageBtn = findViewById(R.id.viewPagerSetCurrntPage_test_btn);
         currentPageBtn.setOnClickListener(v -> {

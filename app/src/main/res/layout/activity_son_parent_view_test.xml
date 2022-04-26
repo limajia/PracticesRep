@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    tools:context=".sonparnesviewtest.SonParentViewTestActivity">
+
+    //宽高在代码中的设置 效果也是相同的
+    <LinearLayout
+        android:id="@+id/screen_width_size"
+        android:layout_width="1300px"
+        android:layout_height="200px"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/black"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:text="绘制到屏幕外面"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parentView"
+        android:layout_width="600px"
+        android:layout_height="500px"
+        android:background="#ff0000"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:id="@+id/sonView"
+            android:layout_width="700px"
+            android:layout_height="300px"
+            android:background="#00ff00" />
+    </LinearLayout>
+
+</LinearLayout>
+
+    <!--    1 、clipToPadding就是说控件的绘制区域是否在padding里面的，true的情况下如果你设置了padding那么绘制的区域就往里缩，
+        2、clipChildren是指子控件是否超过padding区域，
+        这两个属性默认是true的，所以在设置了padding情况下，默认滚动是在padding内部的，要达到上面的效果主要把这两个属性设置了false那么这样子控件就能画到padding的区域了。
+        3、位置上移
+        android:translationY
+    <dimen name="ShopDetailIvTransition">-20sp</dimen>
+    设置这个属性之后，才会绘制出超出的部分，但是不管设置不设置 width还是超出的
+    -->
