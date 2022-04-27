@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!--测试文本后面跟一个图标 wrap_content会不断的扩充出去-->
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:drawableRight="@drawable/block_canary_icon"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="1kh好看sfsfsdsfsfsfsfs看kh"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</LinearLayout>
