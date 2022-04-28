@@ -9,12 +9,16 @@
         android:orientation="horizontal">
 
         // 外层 wrap_content，内层子view 权重形式
+        // margin在weight的范围外，padding在weight的范围内
         <TextView
             android:id="@+id/view1"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="40dp"
             android:layout_toLeftOf="@id/addButton"
+            android:layout_weight="1"
+            android:background="#ff0000"
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
