@@ -17,7 +17,8 @@ public class ViewPagerCurrentPageTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_pager_current_page_test);
         mTestViewPager = findViewById(R.id.test_viewPager);
         mTestViewPager.setOffscreenPageLimit(1);
-        mTestViewPager.setAdapter(new TestAdapter());
+        TestAdapter testAdapter = new TestAdapter();
+        mTestViewPager.setAdapter(testAdapter);
         mTestViewPager.setCurrentItem(5);
 
         // 鸿蒙 会创建012 然后跳到5页面
@@ -38,6 +39,17 @@ public class ViewPagerCurrentPageTestActivity extends AppCompatActivity {
         // I/System.out: docker11  destroyItem position =1
         // I/System.out: docker11  destroyItem position =0
 
+
+        // 测试一下adapter添加数据的时候，item的滚动情况
+        // viewPAger的Item没有任何的变化，没有instantiateItem、destroyItem输出
+        mTestViewPager.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("docker11：延迟执行了");
+                testAdapter.updateCount();
+            }
+        },10000);
+        //
     }
 
 }

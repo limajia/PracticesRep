@@ -9,9 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 public class TestAdapter extends PagerAdapter {
+    private int pagerCount = 10;
+
+    public void updateCount() {
+        pagerCount = 20;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
-        return 10;
+        return pagerCount;
     }
 
     @Override
