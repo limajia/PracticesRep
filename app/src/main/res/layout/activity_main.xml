@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/richText_test_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RichTextTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/sonParentView_test_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

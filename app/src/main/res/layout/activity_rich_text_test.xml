@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".richtexttest.RichTextTestActivity">
+
+    <TextView
+        android:id="@+id/preview_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#cccccc"
+        android:hint="预览区域"/>
+
+    <EditText
+        android:id="@+id/preview_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#cccccc"
+        android:hint="预览区域"/>
+
+    <Button
+        android:id="@+id/html_btn"
+        android:layout_width="match_parent"
+        android:text="使用Html"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/span_btn"
+        android:layout_width="match_parent"
+        android:text="使用span"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/span_btn1"
+        android:layout_width="match_parent"
+        android:text="使用span图"
+        android:layout_height="wrap_content" />
+</LinearLayout>

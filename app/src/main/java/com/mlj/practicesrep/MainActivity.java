@@ -40,6 +40,7 @@ import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
+import com.mlj.practicesrep.richtexttest.RichTextTestActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
@@ -64,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //30 富文本测试
+        View richTextTest = findViewById(R.id.richText_test_btn);
+        richTextTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RichTextTestActivity.class);
+            startActivity(intent);
+        });
         // 29 son parents布局测试
         View sonParentTest = findViewById(R.id.sonParentView_test_btn);
         sonParentTest.setOnClickListener(v -> {

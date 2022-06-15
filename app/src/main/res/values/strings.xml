@@ -4,4 +4,6 @@
     <string name="hello_one_fragment">Hello one fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_two_fragment">Hello two fragment</string>
+    <string name="html_content"><![CDATA[ <font color="#767676">Purchase with</font>
+        <font color="#FF5E75">%s</font><font color="#767676"> points?</font>]]></string>
 </resources>
