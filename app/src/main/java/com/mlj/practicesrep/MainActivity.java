@@ -36,6 +36,7 @@ import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.intentservice.IntentServiceTestActivity;
 import com.mlj.practicesrep.leakcanary.LeakCanaryTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
+import com.mlj.practicesrep.matrixtest.MatrixTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
@@ -65,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //31 matrix测试
+        View matrixTestBtn = findViewById(R.id.matrix_test_btn);
+        matrixTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MatrixTestActivity.class);
+            startActivity(intent);
+        });
         //30 富文本测试
         View richTextTest = findViewById(R.id.richText_test_btn);
         richTextTest.setOnClickListener(v -> {
