@@ -4,4 +4,4 @@ include ':lib'
 include ':ThreadTestLib'
 include ':app'
 rootProject.name = "PracticesRep"
-include ':lib2'
+include ':libRpc'
