@@ -34,7 +34,11 @@ dockername {
     name = "修改了名字的人"
 }
 
+
 android {
+    // 解决No version of NDK matched the requested version 21.0.6113669. Versions available locally: 21.4.7075529, 22.1.7171670, 25.1.8937393问题
+    // https://blog.csdn.net/chzphoenix/article/details/124123977
+    ndkVersion '21.4.7075529'
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
