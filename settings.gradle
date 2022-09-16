@@ -6,3 +6,5 @@ include ':app'
 rootProject.name = "PracticesRep"
 include ':libRpc'
 include ':libAlgorithm'
+include ':contentproviderclient'
+include ':contentproviderservice'

@@ -90,7 +90,7 @@ public class PlayerActivity extends AppCompatActivity {
                 // 创建MediaPlayer调用的是create方法，第一次启动播放前 不需要再调用prepare()，如果是使用构造方法构造的
                 // 话，则需要调用一次prepare()方法
 
-                // MediaPlayer mediaPlayer = new MediaPlayer();
+                //MediaPlayer mediaPlayer = new MediaPlayer();
                 //mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC); 音频加类型
                 if (mMediaPlayer == null) {
                     mMediaPlayer = new MediaPlayer();

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.doker11.contentproviderclient">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PracticesRep">
+        <activity
+            android:name=".ClientCustomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientSystemActivity"
+            android:exported="false" />
+        //main的只能是导出的
+        <activity
+            android:name=".ClientMainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    //在api30中，需要在使用provider的应用程序（eg:ProviderTest）的AndroidManifest中配置好如下queries才能使用
+    //https://www.codeleading.com/article/27985404787/
+    <queries>
+        <package android:name="com.docker11.contentproviderservice" />
+        <provider android:authorities="com.docker11.NameContentProvider" />
+    </queries>
+
+</manifest>
