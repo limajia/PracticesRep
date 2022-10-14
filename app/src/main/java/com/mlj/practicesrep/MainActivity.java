@@ -50,6 +50,7 @@ import com.mlj.practicesrep.touchevent.EventActivity;
 import com.mlj.practicesrep.translucentTest.TranslucentActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
 import com.mlj.practicesrep.viewpagesetcurrent.ViewPagerCurrentPageTestActivity;
+import com.mlj.practicesrep.webview.WebViewTestActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -66,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //32 webview测试
+        View webviewTestBtn = findViewById(R.id.webview_test_btn);
+        webviewTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, WebViewTestActivity.class);
+            startActivity(intent);
+        });
         //31 matrix测试
         View matrixTestBtn = findViewById(R.id.matrix_test_btn);
         matrixTestBtn.setOnClickListener(v -> {
