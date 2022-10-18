@@ -1,8 +1,6 @@
 package com.docker.threadtestlib;
 
 
-import com.sun.istack.internal.NotNull;
-
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
@@ -35,7 +33,7 @@ public class TestThreadPoolExecutor {
                     AtomicInteger atomicInteger = new AtomicInteger();
 
                     @Override
-                    public Thread newThread(@NotNull Runnable runnable) {
+                    public Thread newThread(Runnable runnable) {
                         int index = atomicInteger.incrementAndGet();
                         //命名 标识等
                         return new Thread(runnable, "线程名称-" + index);
