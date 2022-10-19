@@ -1,141 +1,60 @@
 package com.docker.threadtestlib;
 
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
+// 测试可重入性
+/*
+一个线程持有锁时，当其他线程尝试获取该锁时，会被阻塞；
+而这个线程尝试获取自己持有锁时，如果成功说明该锁是可重入的，反之则不可重入
+*/
+
 import java.util.concurrent.locks.ReentrantLock;
 
-// 这也是testReentrantLock
-// 单生产者/单消费者 多生产者/多消费者 notify随机-全wait死锁 显示锁
-// https://www.jianshu.com/p/146312dc748c
-// java 这里只体现了等待池
+/*虽然一个线程是按顺序执行的，但是可以如下面的例子那样，递归调用执行*/
 public class TestSynchronized {
     public static void main(String[] args) {
-        Target t = new Target();
-
-        Thread t1 = new Increase(t);
-        t1.setName("Increase1：");
-        // 添加体现锁池的线程
-        Thread t11 = new Increase(t);
-        t11.setName("Increase2：");
-        //
-        Thread t2 = new Decrease(t);
-        t2.setName("Decrease1：");
-        Thread t22 = new Decrease(t);
-        t22.setName("Decrease2：");
-
-        t1.start();
-        t11.start();
-        t2.start();
-        t22.start();
-    }
-
-}
-
-class Target {
-    private int count;
-    private final Lock lock;
-    private final Condition deCreaseCondition;
-    private final Condition inCreaseCondition;
-
-    public Target() {
-        lock = new ReentrantLock();
-        inCreaseCondition = lock.newCondition();
-        deCreaseCondition = lock.newCondition();
-    }
-
-    // 此demo 只有一个线程操作这个函数, 添加一个t11线程 同时更改
-    public void increase() {
-        lock.lock();
-        try {
-            System.out.println(Thread.currentThread().getName() + ":函数前" + count);
-            if (count == 2) {
-                try {
-                    System.out.println("count=2执行");
-                    inCreaseCondition.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                System.out.println("count=" + count + "执行");
-            }
-            count++;
-            System.out.println("docker：" + Thread.currentThread().getName() + ":" + count);
-            deCreaseCondition.signal();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    public void decrease() {
-        lock.lock();
-        try {
-            if (count == 0) {
-                try {
-                    //等待，由于Decrease线程调用的该方法,
-                    //所以Decrease线程进入对象t(main函数中实例化的)的等待池，并且释放对象t的锁
-                    deCreaseCondition.await();//Object类的方法
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            count--;
-            System.out.println(Thread.currentThread().getName() + ":" + count);
-
-            //唤醒线程Increase，Increase线程从等待池到锁池
-            inCreaseCondition.signal();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            lock.unlock();
-        }
+        MyReent reent = new MyReent();
+        new Thread(reent).start();
     }
 }
 
-class Increase extends Thread {
-    private Target t;
-
-    public Increase(Target t) {
-        this.t = t;
-    }
-
+class MyReent implements Runnable {
+    //方式1 static final Object sLock = new Object();
+    //方式2 synchronized 修饰run()、修复function();
+    //方式3 ReentrantLock reentrantLock = new ReentrantLock();
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            try {
-                Thread.sleep((long) (Math.random() * 500));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            t.increase();
-        }
+        //方式3 reentrantLock.lock();
+        //方式1 synchronized (sLock) {
+        System.out.println(Thread.currentThread().getName() + " run");
+        function();
+        //方式3 reentrantLock.unlock();
+    }
+
+    public void function() {
+        //方式3 reentrantLock.lock();
+        //方式1 synchronized (sLock) {
+        System.out.println(Thread.currentThread().getName() + " function");
+        //方式3 reentrantLock.unlock();
     }
 }
 
-class Decrease extends Thread {
+/*
+2 synchronized如何实现可重入性
+  synchronized关键字经过编译之后，会在同步块的前后分别形成monitorenter
+  和monitorexit这两个字节码指令。每个锁对象内部维护一个计数器，该计数器初始值为0，
+  表示任何线程都可以获取该锁并执行相应的方法。根据虚拟机规范的要求，在执行monitorenter指令时，
+  首先要尝试获取对象的锁。如果这个对象没被锁定，或者当前线程已经拥有了那个对象的锁，
+  把锁的计数器加1，相应的，在执行monitorexit指令时会将锁计数器减1，当计数器为0时，锁就被释放。
+  如果获取对象锁失败，那当前线程就要阻塞等待，直到对象锁被另外一个线程释放为止。
 
-    private Target t;
+3 ReentrantLock如何实现可重入性
+  ReentrantLock在内部使用了内部类Sync来管理锁，所以真正的获取锁是由Sync的实现类控制的。
+  Sync有两个实现，分别为NonfairSync（非公平锁）和FairSync（公平锁）。Sync通过继承AQS实现，
+  在AQS中维护了一个private volatile int state来计数【重入次数】，
+  避免了频繁的持有释放操作带来效率问题。
 
-    public Decrease(Target t) {
-        this.t = t;
-    }
+  // state == 0 此时此刻没有线程持有锁
+  // 如果重入了，需要操作：state=state+1
+  // 则值可能为 0，1，   -- 2，3，……
 
-    @Override
-    public void run() {
-        for (int i = 0; i < 10; i++) {
-            try {
-                //随机睡眠0~500毫秒
-                //sleep方法的调用，不会释放对象t的锁
-                Thread.sleep((long) (Math.random() * 500));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            t.decrease();
-
-        }
-
-    }
-
-}
+  https://www.jianshu.com/p/ca7df6c1110f
+* */
