@@ -36,6 +36,8 @@ class Target {
     private final Lock lock;
     private final Condition deCreaseCondition;
     private final Condition inCreaseCondition;
+    // 这两个Condition用来区分 不同类型（如读、写）的Thread，自己唤醒自己的类型的线程。如果Object.notify/wait,会统一使用类似Lock对象的notify/wait
+    // 让所有的部分类型的线程去争取锁。
 
     public Target() {
         lock = new ReentrantLock();
