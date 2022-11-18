@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sqllite.SqlLiteTestTestActivity">
+
+    <TextView
+        android:id="@+id/db_result_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="多线程操作同一个数据库"
+        android:textSize="13dp" />
+
+    <Button
+        android:id="@+id/start_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="多线程操作同一个数据库,点击开始操作"
+        android:textSize="13dp" />
+</LinearLayout>

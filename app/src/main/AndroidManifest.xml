@@ -55,6 +55,7 @@
             android:name=".translucentTest.TranslucentActivity"
             android:exported="false" />
         <activity android:name=".sqllite.SqlLiteTestTestActivity" />
+        <activity android:name=".sqllite.SqlLiteTestTestActivity2" />
         <activity android:name=".intentservice.IntentServiceTestActivity" />
         <activity android:name=".blockcanary.BlockCanaryTestActivity" />
         <activity android:name=".leakcanary.LeakCanaryTestActivity" />

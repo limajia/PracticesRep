@@ -1,6 +1,7 @@
 package com.mlj.practicesrep.sqllite;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ public class SqlLiteTestTestActivity extends AppCompatActivity implements View.O
     private Button mQueryBtn;
     private Button mUpgradeBtn;
     private TextView mDbResultText;
+    private View mHandMultiHelperBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class SqlLiteTestTestActivity extends AppCompatActivity implements View.O
         mQueryBtn.setOnClickListener(this);
         mUpgradeBtn = findViewById(R.id.upgrade_btn);
         mUpgradeBtn.setOnClickListener(this);
+        mHandMultiHelperBtn = findViewById(R.id.go_hand_multi_helper);
+        mHandMultiHelperBtn.setOnClickListener(this);
         mDbResultText = findViewById(R.id.db_result_text);
     }
 
@@ -97,6 +101,10 @@ public class SqlLiteTestTestActivity extends AppCompatActivity implements View.O
 //                这种行为是错误的
 //                MySqlLite mySqlLite3 = new MySqlLite(this, DB_NAME, null, 1);
 //                SQLiteDatabase readableDatabase3 = mySqlLite3.getReadableDatabase();
+                break;
+            case R.id.go_hand_multi_helper:
+                Intent intent = new Intent(SqlLiteTestTestActivity.this,SqlLiteTestTestActivity2.class);
+                startActivity(intent);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + v.getId());
