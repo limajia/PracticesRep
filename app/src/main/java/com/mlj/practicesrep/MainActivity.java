@@ -27,6 +27,7 @@ import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
 import com.mlj.practicesrep.broadcast.BroadCastActivity;
 import com.mlj.practicesrep.configurationtest.ConfigurationTestActivity;
+import com.mlj.practicesrep.constraint.ConstraintTestActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.floatbtntest.FloatBtnTestActivity;
@@ -67,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //33 constraint测试
+        View constraintTestBtn = findViewById(R.id.constraint_test_btn);
+        constraintTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ConstraintTestActivity.class);
+            startActivity(intent);
+        });
         //32 webview测试
         View webviewTestBtn = findViewById(R.id.webview_test_btn);
         webviewTestBtn.setOnClickListener(v -> {
@@ -440,8 +447,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("docker", "权限" + i);
         if (i != PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
             }
         } else {
             ///https://www.jianshu.com/p/9155a0ff0726
