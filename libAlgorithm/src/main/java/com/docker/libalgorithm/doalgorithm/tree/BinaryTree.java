@@ -47,6 +47,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class BinaryTree {
     /*递归 可以绘制访问图，每一个结点都会访问三次，当每个点作为Root的时候进行输出*/
@@ -59,15 +60,15 @@ public class BinaryTree {
 
     void middleDo(TreeNode root) {//中根
         if (root == null) return;
-        preDo(root.left);
+        middleDo(root.left);
         System.out.println(root.value); // 都是Visit(Root)的时候，输出需要的值，其他的都在递归的栈帧中，等待返回执行。
-        preDo(root.right);
+        middleDo(root.right);
     }
 
     void lastDo(TreeNode root) {//后根
         if (root == null) return;
-        preDo(root.left);
-        preDo(root.right);
+        lastDo(root.left);
+        lastDo(root.right);
         System.out.println(root.value); // 都是Visit(Root)的时候，输出需要的值，其他的都在递归的栈帧中，等待返回执行。
     }
 
@@ -129,7 +130,7 @@ public class BinaryTree {
     /*4.非递归实现二叉树的层次遍历*/
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new LinkedList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();//实现了queue的功能
         if (root == null)
             return result;
         queue.add(root);
