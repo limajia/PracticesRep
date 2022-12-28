@@ -193,18 +193,19 @@ public class SinglyLinkedList {
             System.out.println("开始执行奇数节点的回文判断");
             Node leftLink = null;
             Node rightLink = null;
-            if (q.next == null) { // 两种情况跳出上面的while循环 1.q.next==null,即偶数到达最后一个
-                // 2.q.next.next = null，即到最后了 但是还有一个奇数的
+            if (q.next == null) { // 两种情况跳出上面的while循环
+                // 1.q.next==null,链表是奇数个
+                // 2.q.next.next = null，链表是偶数个
                 //　p 一定为整个链表的中点，且节点数目为奇数
                 rightLink = p.next;
-                leftLink = inverseLinkList(p).next;
+                leftLink = inverseLinkList(p).next;//翻转链表
                 System.out.println("左边第一个节点" + leftLink.data);
                 System.out.println("右边第一个节点" + rightLink.data);
 
             } else {
                 //p q　均为中点
                 rightLink = p.next;
-                leftLink = inverseLinkList(p);
+                leftLink = inverseLinkList(p); //翻转链表
             }
             return TFResult(leftLink, rightLink);
 

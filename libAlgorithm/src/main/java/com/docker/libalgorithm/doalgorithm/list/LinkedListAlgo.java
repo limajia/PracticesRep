@@ -39,41 +39,42 @@ public class LinkedListAlgo {
     }
 
     // 有序链表合并
-    // public static Node mergeSortedLists(Node la, Node lb) {
-    // if (la == null) return lb;
-    // if (lb == null) return la;
+  /*
+  public static Node mergeSortedLists(Node la, Node lb) {
+     if (la == null) return lb;
+     if (lb == null) return la;
 
-    // Node p = la;
-    // Node q = lb;
-    // Node head; //这是一个合并的链表的指针
-    // if (p.data < q.data) {
-    //   head = p;
-    //   p = p.next;
-    // } else {
-    //   head = q;
-    //   q = q.next;
-    // } // 到这里移动移动了一个位置了
-    // Node r = head; //这里重新拷贝一个头指针用于进行位置移动，否则修改后找不到头指针了
+     Node p = la;
+     Node q = lb;
+     Node head; //这是一个合并的链表的指针
+     if (p.data < q.data) {
+       head = p;
+       p = p.next;
+     } else {
+       head = q;
+       q = q.next;
+     } // 到这里移动移动了一个位置了
+     Node r = head; //这里重新拷贝一个头指针用于进行位置移动，否则修改后找不到头指针了
 
-    // while (p != null && q != null) {
-    //   if (p.data < q.data) {
-    //     r.next = p;
-    //     p = p.next;
-    //   } else {
-    //     r.next = q;
-    //     q = q.next;
-    //   }
-    //   r = r.next;
-    // }
+     while (p != null && q != null) {
+       if (p.data < q.data) {
+         r.next = p;
+         p = p.next;
+       } else {
+         r.next = q;
+         q = q.next;
+       }
+       r = r.next;
+     }
 
-    // if (p != null) {
-    //   r.next = p; // 将剩余没有拼接的链表 拼接起来
-    // } else {
-    //   r.next = q;
-    // }
+     if (p != null) {
+       r.next = p; // 将剩余没有拼接的链表 拼接起来
+     } else {
+       r.next = q;
+     }
 
-    // return head;
-    //}
+     return head;
+    }*/
 
     //-----------------------------------------
 
@@ -123,6 +124,9 @@ public class LinkedListAlgo {
 
 
     // 删除倒数第K个结点
+    // 算法思想：定义两个指针，pFast和pSlow，都指向头结点，pFast先后移k-1位，
+    // 使pFast指向第k个结点，此时pSlow就是相对pFast的倒数第k个结点。
+    // 然后同时后移，当pFast走到表尾时，pSlow正好指向倒数第k个结点。然后将pSlow指向的结点删除。
     public static Node deleteLastKth(Node list, int k) {
         Node fast = list;
         int i = 1;
@@ -137,14 +141,14 @@ public class LinkedListAlgo {
         Node prev = null;
         while (fast.next != null) {
             fast = fast.next;
-            prev = slow;
+            prev = slow; // 计算删除点的前一个节点
             slow = slow.next;
         }
 
-        if (prev == null) {
+        if (prev == null) {//删除第一个节点
             list = list.next;
         } else {
-            prev.next = prev.next.next;
+            prev.next = prev.next.next;//删除节点
         }
         return list;
     }
