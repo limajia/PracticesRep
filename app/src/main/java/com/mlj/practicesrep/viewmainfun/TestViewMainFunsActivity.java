@@ -19,6 +19,7 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("ViewMainFunsView activity: TestViewMainFunsActivity.onCreate");
         setContentView(R.layout.activity_test_view_main_funs);
         mAddAnotherView = findViewById(R.id.addAnotherView);
         mRooterView = findViewById(R.id.rooter_view);
@@ -38,7 +39,41 @@ public class TestViewMainFunsActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        System.out.println("ViewMainFunsView activity: TestViewMainFunsActivity.onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("ViewMainFunsView activity: TestViewMainFunsActivity.onResume");
+    }
 }
+
+// https://blog.csdn.net/nihaomabmt/article/details/109777372 参考Android View的生命周期函数总结
+// 补充activity onCreate和onResume  //onWindowVisibilityChanged 应该是View自己的onVisibilityChanged()
+/*
+2023-02-18 20:11:31.895 20455-20455/com.mlj.practicesrep I/System.out: ViewMainFunsView activity: TestViewMainFunsActivity.onCreate
+2023-02-18 20:11:31.904 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: ViewMainFunsView() called with: context = [com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity@8da5647], attrs = [android.content.res.XmlBlock$Parser@d9f4b6a]
+2023-02-18 20:11:31.904 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onFinishInflate() called
+2023-02-18 20:11:31.912 20455-20455/com.mlj.practicesrep I/System.out: ViewMainFunsView activity: TestViewMainFunsActivity.onStart
+2023-02-18 20:11:31.914 20455-20455/com.mlj.practicesrep I/System.out: ViewMainFunsView activity: TestViewMainFunsActivity.onResume
+2023-02-18 20:11:31.948 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onAttachedToWindow() called
+2023-02-18 20:11:31.948 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onWindowVisibilityChanged() called with: visibility = [0]
+2023-02-18 20:11:31.952 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onMeasure() called with: widthMeasureSpec = [1073742904], heightMeasureSpec = [1073743996]
+2023-02-18 20:11:31.963 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onMeasure() called with: widthMeasureSpec = [1073742904], heightMeasureSpec = [1073743996]
+2023-02-18 20:11:31.964 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onSizeChanged() called with: w = [1080], h = [2172], oldw = [0], oldh = [0]
+2023-02-18 20:11:31.964 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onLayout() called with: changed = [true], left = [0], top = [0], right = [1080], bottom = [2172]
+2023-02-18 20:11:31.965 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onDraw() called with: canvas = [android.graphics.RecordingCanvas@f72358]
+2023-02-18 20:11:31.993 20455-20455/com.mlj.practicesrep D/ViewMainFunsView11: onWindowFocusChanged() called with: hasWindowFocus = [true]
+* */
+//
+
+
+
 /*
 
 // xml创建一个view 然后代码直接在view树中add 一个View，观察声明周期的执行顺序和结果
