@@ -75,8 +75,9 @@ class DecreaseExt extends Thread {
 //Increase1：:函数前
 //wait前执行
 //开始唤醒
-//wait后执行  唤醒后从这里获取锁后执行
+//wait后执行  唤醒后从这里获取锁后执行  //所以解决问题的话，最好在这里用一个while循环进行判断变量。防止直接往下走造成问题
 //increase完成
+
 
 //在Java对象中，有两种池
 //锁池-----------------------synchronized
