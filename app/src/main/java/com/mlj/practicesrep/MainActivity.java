@@ -30,6 +30,7 @@ import com.mlj.practicesrep.configurationtest.ConfigurationTestActivity;
 import com.mlj.practicesrep.constraint.ConstraintTestActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
+import com.mlj.practicesrep.customviewexttest.CustomViewExtTestActivity;
 import com.mlj.practicesrep.floatbtntest.FloatBtnTestActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
 import com.mlj.practicesrep.hooktest.HookTestActivity;
@@ -68,6 +69,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //34 custom_view_ext_test_btn理解测试
+        View customViewExtTestBtn = findViewById(R.id.custom_view_ext_test_btn);
+        customViewExtTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CustomViewExtTestActivity.class);
+            startActivity(intent);
+        });
         //33 constraint测试
         View constraintTestBtn = findViewById(R.id.constraint_test_btn);
         constraintTestBtn.setOnClickListener(v -> {

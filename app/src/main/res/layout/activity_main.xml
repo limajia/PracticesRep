@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/custom_view_ext_test_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="customViewExtTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/constraint_test_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
