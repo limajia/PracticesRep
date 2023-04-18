@@ -12,6 +12,30 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/notification_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="notificationTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/view_pager2_current_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="viewPager2CurrentTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/no_edge_scroll_test_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="noEdgeScrollTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/custom_view_ext_test_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

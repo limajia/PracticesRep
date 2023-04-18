@@ -56,7 +56,7 @@ public class NestedScrollAndTopAttractActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 80;
+            return 3;
         }
 
         class LinearViewHolder extends RecyclerView.ViewHolder {

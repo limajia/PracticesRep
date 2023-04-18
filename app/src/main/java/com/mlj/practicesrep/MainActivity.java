@@ -41,6 +41,7 @@ import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.matrixtest.MatrixTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
+import com.mlj.practicesrep.notificationtest.NotificationTestActivity;
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.richtexttest.RichTextTestActivity;
@@ -48,9 +49,11 @@ import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
+import com.mlj.practicesrep.testnovlenoedgescroll.TestNoEdgeScrollActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 import com.mlj.practicesrep.translucentTest.TranslucentActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
+import com.mlj.practicesrep.viewpage2setcurrent.ViewPager2CurrentPageTestActivity;
 import com.mlj.practicesrep.viewpagesetcurrent.ViewPagerCurrentPageTestActivity;
 import com.mlj.practicesrep.webview.WebViewTestActivity;
 
@@ -69,6 +72,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //37 iew_pager2_current理解测试
+        View notification_test = findViewById(R.id.notification_test);
+        notification_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, NotificationTestActivity.class);
+            startActivity(intent);
+        });
+        //36 iew_pager2_current理解测试
+        View viewPage2TestBtn = findViewById(R.id.view_pager2_current_test);
+        viewPage2TestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ViewPager2CurrentPageTestActivity.class);
+            startActivity(intent);
+        });
+        //35 no_edge_scroll_test_btn理解测试
+        View noEdgeScrollTestBtn = findViewById(R.id.no_edge_scroll_test_btn);
+        noEdgeScrollTestBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TestNoEdgeScrollActivity.class);
+            startActivity(intent);
+        });
         //34 custom_view_ext_test_btn理解测试
         View customViewExtTestBtn = findViewById(R.id.custom_view_ext_test_btn);
         customViewExtTestBtn.setOnClickListener(v -> {

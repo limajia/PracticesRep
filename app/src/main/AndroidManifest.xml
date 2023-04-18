@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".NotificationTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".testnovlenoedgescroll.TestNoEdgeScrollActivity"
+            android:exported="false" />
+        <activity
             android:name=".customviewexttest.CustomViewExtTestActivity"
             android:exported="false" />
         <activity
@@ -130,6 +136,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".viewpage2setcurrent.ViewPager2CurrentPageTestActivity" />
+        <activity android:name=".notificationtest.NotificationTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>
