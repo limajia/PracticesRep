@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".PageJumpDesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PageJumpTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".NotificationTestActivity"
             android:exported="false" />
         <activity
@@ -138,6 +144,17 @@
         </activity>
         <activity android:name=".viewpage2setcurrent.ViewPager2CurrentPageTestActivity" />
         <activity android:name=".notificationtest.NotificationTestActivity" />
+        <activity android:name=".pagejump.PageJumpTestActivity" />
+        <activity android:name=".pagejump.PageJumpDesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="docker"
+                    android:path="/mypath"
+                    android:scheme="myscheme" />
+            </intent-filter>
+        </activity>
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

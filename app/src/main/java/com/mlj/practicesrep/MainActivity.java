@@ -43,6 +43,7 @@ import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
 import com.mlj.practicesrep.notificationtest.NotificationTestActivity;
 import com.mlj.practicesrep.overtransitionanim.TestOverAnimationActivity;
+import com.mlj.practicesrep.pagejump.PageJumpTestActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.richtexttest.RichTextTestActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
@@ -72,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //37 pageJumpTest理解测试
+        View page_jump_test = findViewById(R.id.page_jump_test);
+        page_jump_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PageJumpTestActivity.class);
+            startActivity(intent);
+        });
         //37 iew_pager2_current理解测试
         View notification_test = findViewById(R.id.notification_test);
         notification_test.setOnClickListener(v -> {
