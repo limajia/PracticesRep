@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PageJumpTestActivity.class);
             startActivity(intent);
         });
-        //37 iew_pager2_current理解测试
+        //37 notification_test
         View notification_test = findViewById(R.id.notification_test);
         notification_test.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, NotificationTestActivity.class);

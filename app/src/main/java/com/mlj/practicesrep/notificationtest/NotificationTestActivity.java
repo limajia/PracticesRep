@@ -1,5 +1,6 @@
 package com.mlj.practicesrep.notificationtest;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -30,6 +31,7 @@ public class NotificationTestActivity extends AppCompatActivity {
     private Button mNotification3;
     private Button mNotification4;
     private Button mNotification5;
+    private Button mNotification6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,14 @@ public class NotificationTestActivity extends AppCompatActivity {
         mNotification3 = findViewById(R.id.notification3);
         mNotification4 = findViewById(R.id.notification4);
         mNotification5 = findViewById(R.id.notification5);
+        mNotification6 = findViewById(R.id.notification6);
+        mNotification6.setOnClickListener(v -> {
+            //Context context, int id, String title, String content, String[] messages, Intent intent
+            //也是根据内容动态调整布局的，不是写死固定的位置显示固定的内容
+            //如String[]就一条内容，标准的title和content就不显示了
+            //就是说没有规律，要么符合风格的内容全部写上，不符合规格的可能就乱了
+            NotificationUtil.showInboxNotification(getApplicationContext(),1,"inBoxbigContentTitle","inBoxSummaryText",new String[]{"这是第一行","这是第二行"},new Intent(NotificationTestActivity.this,MainActivity.class));
+        });
         mNotification1.setOnClickListener(v -> {
             sendNotification1("发送一个消息" + new Random().nextInt(1000));
         });
