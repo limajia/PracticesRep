@@ -1,0 +1,15 @@
+sdk中最好不要混着使用, 混着使用的话，注意不同部分的不同适配
+有用compat类有的不用compat类
+1.NotificationChannelCompat
+2.NotificationManagerCompat 1和2.做了版本判断 解决channel通道问题--> NotificationChannel
+3.NotificationCompat--->build()--->NotificationCompatBuilder//--->输解决不同版本样式不同的问题-->出Notification，这个类需要channelId
+
+底层都是NotificationManager  Notification 及版本适配
+
+
+如:NotificationManagerCompat的创建
+    private NotificationManagerCompat(Context context) {
+        mContext = context;
+        mNotificationManager = (NotificationManager) mContext.getSystemService(
+                Context.NOTIFICATION_SERVICE);
+    }
