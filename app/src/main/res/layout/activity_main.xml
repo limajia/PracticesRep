@@ -12,6 +12,22 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/float_window_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="floatWindowTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/file_provider_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fileProvideTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/page_jump_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

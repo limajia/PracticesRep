@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
@@ -32,6 +33,7 @@ import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.customviewexttest.CustomViewExtTestActivity;
 import com.mlj.practicesrep.floatbtntest.FloatBtnTestActivity;
+import com.mlj.practicesrep.floatwindowtest.FloatWidowTestActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
 import com.mlj.practicesrep.hooktest.HookTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
@@ -73,7 +75,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //37 pageJumpTest理解测试
+        //40 file_provider_test
+        View float_window_test = findViewById(R.id.float_window_test);
+        float_window_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FloatWidowTestActivity.class);
+            startActivity(intent);
+        });
+        //39 file_provider_test
+        View file_provider_test = findViewById(R.id.file_provider_test);
+        file_provider_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FileProviderTestActivity.class);
+            startActivity(intent);
+        });
+        //38 pageJumpTest理解测试
         View page_jump_test = findViewById(R.id.page_jump_test);
         page_jump_test.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, PageJumpTestActivity.class);

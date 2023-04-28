@@ -20,6 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".FloatPermissionGuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FloatWidowTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FileProviderTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".PageJumpDesActivity"
             android:exported="false" />
         <activity
@@ -148,13 +157,18 @@
         <activity android:name=".pagejump.PageJumpDesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="docker"
                     android:path="/mypath"
                     android:scheme="myscheme" />
             </intent-filter>
         </activity>
+        <activity android:name=".floatwindowtest.FloatWidowTestActivity" />
+        <activity android:name=".floatwindowtest.FloatPermissionGuideActivity"
+            android:theme="@style/alertThemeActivity"/>
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>
