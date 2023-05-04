@@ -13,3 +13,52 @@ sdk中最好不要混着使用, 混着使用的话，注意不同部分的不同
         mNotificationManager = (NotificationManager) mContext.getSystemService(
                 Context.NOTIFICATION_SERVICE);
     }
+
+
+
+// 判断通知关闭或者通知渠道关闭
+在 Android 中，您可以通过检查通知渠道的状态来判断通知渠道是否被关闭。如果通知渠道被关闭，则您可以向用户显示一个警告消息，告知用户应该打开通知渠道以确保应用程序的通知正常工作。
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    // Android O 及更高版本
+    NotificationChannel notificationChannel = notificationManager.getNotificationChannel(channelId);
+    // 如果通知渠道的重要性为 NotificationManager.IMPORTANCE_NONE，则表示通知渠道被关闭。
+    if (notificationChannel != null && notificationChannel.getImportance() == NotificationManager.IMPORTANCE_NONE) {
+        // 通知渠道被关闭
+    }
+} else {
+    // Android N 及以下版本不支持通知渠道
+    // 在这种情况下，您可以检查通知权限的状态来确定通知是否被关闭
+    if (notificationManager.areNotificationsEnabled()) {
+        // 通知权限已经开启，通知渠道可能被关闭
+    } else {
+        // 通知权限被禁用
+    }
+}
+
+// 前台服务被关闭
+前台服务是一种重要的服务，它在执行某些任务时必须保持运行状态。例如，当应用程序播放音乐或下载文件时，
+它可能需要使用前台服务来保持应用程序处于活动状态。在这种情况下，如果前台服务通知被关闭，则操作系统可能会将应用程序视为后台应用程序，
+并随时停止它，从而导致应用程序无法正常工作。
+
+// Android 进程分类
+在 Android 系统中，进程可以分为以下几类：
+
+1. 前台进程：正在与用户交互的进程，或者正在执行用户正在等待的操作的进程。这些进程通常具有高优先级，系统不会轻易终止它们。
+
+2. 可见进程：虽然没有与用户直接交互，但是它们的 UI 是可见的，例如 Activity 进入了可见状态但是被其他 Activity 部分遮挡，这时它的进程就是可见进程。这些进程的优先级较高，系统会尽量避免终止它们。
+
+3. 后台进程：没有与用户直接交互的进程，但是仍然在运行。这些进程的优先级较低，当系统内存不足时，系统会优先终止这些进程。
+
+4. 空进程：没有任何活动，仅占用一些系统资源的进程。这些进程的优先级最低，通常只有在系统内存不足时才会被终止。
+
+除了以上四类进程，还有一类重要的进程是服务进程。服务进程是一种在后台执行长时间任务的进程，它们通常不会与用户直接交互，但是它们的功能对用户来说很重要。例如播放音乐、下载文件等任务都是由服务进程来完成的。服务进程可以在前台或后台运行，如果在前台运行，则需要显示通知，用户可以看到它正在执行任务。如果在后台运行，则优先级较低，当系统内存不足时可能被终止。
+
+除了以上几类进程，还有一些系统进程，例如 Zygote 进程、SystemServer 进程等。这些进程在 Android 系统中起着重要的作用，它们通常在系统启动时就被创建，不会被终止。
+
+// LMK全程
+LMK全称为"Low Memory Killer"，它是Linux内核的一个内存管理机制，也被应用于Android系统中。
+在Android系统中，LMK机制的主要目的是通过终止后台进程来释放内存，以保证前台进程和系统服务的正常运行。当系统内存不足时，LMK机制会根据每个进程的OOM（Out of Memory）分数，逐个终止后台进程，释放内存。OOM分数是指一个进程在系统内存不足时，需要被终止的概率。OOM分数越高的进程，越容易被LMK机制终止。
+在Android系统中，LMK机制的具体实现方式是通过Kernel的"oom_adj"和"oom_score"参数来计算每个进程的OOM分数。"oom_adj"参数表示进程的OOM值，"oom_score"参数表示进程的OOM分数。Android系统会根据这些参数来判断进程是否需要被终止。
+为了避免过多的后台进程被终止，Android系统还提供了一个LMK阈值。LMK阈值是一个内存阈值，当系统内存低于这个阈值时，LMK机制就会开始终止后台进程以释放内存。
+LMK机制的运作方式在不同的Android版本中可能略有差异，但基本原理都是相同的。通过LMK机制，Android系统可以自动管理内存，保证前台进程和系统服务的正常运行，从而提高系统的稳定性和响应速度。
+// 参考链接 https://juneyang.blog.csdn.net/article/details/105670683?spm=1001.2101.3001.6650.16&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-16-105670683-blog-78657691.235%5Ev32%5Epc_relevant_default_base3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-16-105670683-blog-78657691.235%5Ev32%5Epc_relevant_default_base3&utm_relevant_index=22
