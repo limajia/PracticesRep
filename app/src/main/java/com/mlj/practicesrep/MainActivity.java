@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
+import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
 import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
@@ -76,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //41 propertyanim_test
+        View propertyanim_test = findViewById(R.id.propertyanim_test);
+        propertyanim_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PropertyanimTestActivity.class);
+            startActivity(intent);
+        });
         //41recyclerviewtest
         View recyclerview_test = findViewById(R.id.recyclerview_test);
         recyclerview_test.setOnClickListener(v -> {

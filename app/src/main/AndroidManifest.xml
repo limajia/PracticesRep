@@ -20,6 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".PropertyanimTestActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RecyclerViewTestActivity"
             android:exported="false">
             <meta-data
@@ -178,6 +185,7 @@
             android:name=".floatwindowtest.FloatPermissionGuideActivity"
             android:theme="@style/alertThemeActivity" />
         <activity android:name=".RecyclerViewTest.RecyclerViewTestActivity" />
+        <activity android:name=".PropertyanimTest.PropertyanimTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

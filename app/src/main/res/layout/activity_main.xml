@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/propertyanim_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="propertyanimTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/recyclerview_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
