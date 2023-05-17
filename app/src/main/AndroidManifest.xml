@@ -20,6 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".RecyclerViewTestActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".FloatPermissionGuideActivity"
             android:exported="false" />
         <activity
@@ -167,8 +174,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".floatwindowtest.FloatWidowTestActivity" />
-        <activity android:name=".floatwindowtest.FloatPermissionGuideActivity"
-            android:theme="@style/alertThemeActivity"/>
+        <activity
+            android:name=".floatwindowtest.FloatPermissionGuideActivity"
+            android:theme="@style/alertThemeActivity" />
+        <activity android:name=".RecyclerViewTest.RecyclerViewTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
+import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
@@ -75,7 +76,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //40 file_provider_test
+        //41recyclerviewtest
+        View recyclerview_test = findViewById(R.id.recyclerview_test);
+        recyclerview_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RecyclerViewTestActivity.class);
+            startActivity(intent);
+        });
+        //40 FloatWidowTest
         View float_window_test = findViewById(R.id.float_window_test);
         float_window_test.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, FloatWidowTestActivity.class);
