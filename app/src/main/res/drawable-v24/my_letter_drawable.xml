@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mlj.practicesrep.drawabletest.LetterDrawable xmlns:android="http://schemas.android.com/apk/res/android">
+
+</com.mlj.practicesrep.drawabletest.LetterDrawable>
+
+<!--Drawable的使用，需要在Drawable目录中进行定义-->

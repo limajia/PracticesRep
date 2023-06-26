@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".DrawableTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".PropertyanimTestActivity"
             android:exported="false">
             <meta-data
@@ -186,6 +189,7 @@
             android:theme="@style/alertThemeActivity" />
         <activity android:name=".RecyclerViewTest.RecyclerViewTestActivity" />
         <activity android:name=".PropertyanimTest.PropertyanimTestActivity" />
+        <activity android:name=".drawabletest.DrawableTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

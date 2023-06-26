@@ -34,6 +34,7 @@ import com.mlj.practicesrep.constraint.ConstraintTestActivity;
 import com.mlj.practicesrep.customdialog.CustomDialogActivity;
 import com.mlj.practicesrep.customview.CustomViewActivity;
 import com.mlj.practicesrep.customviewexttest.CustomViewExtTestActivity;
+import com.mlj.practicesrep.drawabletest.DrawableTestActivity;
 import com.mlj.practicesrep.floatbtntest.FloatBtnTestActivity;
 import com.mlj.practicesrep.floatwindowtest.FloatWidowTestActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
@@ -77,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //42 drawable_test
+        View drawable_test = findViewById(R.id.drawable_test);
+        drawable_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DrawableTestActivity.class);
+            startActivity(intent);
+        });
         //41 propertyanim_test
         View propertyanim_test = findViewById(R.id.propertyanim_test);
         propertyanim_test.setOnClickListener(v -> {
