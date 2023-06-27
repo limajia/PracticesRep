@@ -53,6 +53,7 @@ import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.richtexttest.RichTextTestActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
+import com.mlj.practicesrep.soundPoolTest.SoundPoolActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.testnovlenoedgescroll.TestNoEdgeScrollActivity;
@@ -78,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //43 drawable_test
+        View soundPool_test = findViewById(R.id.soundPool_test);
+        soundPool_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SoundPoolActivity.class);
+            startActivity(intent);
+        });
         //42 drawable_test
         View drawable_test = findViewById(R.id.drawable_test);
         drawable_test.setOnClickListener(v -> {

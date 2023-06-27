@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/soundPool_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="soundPoolTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/drawable_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".SoundPoolActivity"
+            android:exported="false" />
+        <activity
             android:name=".DrawableTestActivity"
             android:exported="false" />
         <activity
@@ -190,6 +193,7 @@
         <activity android:name=".RecyclerViewTest.RecyclerViewTestActivity" />
         <activity android:name=".PropertyanimTest.PropertyanimTestActivity" />
         <activity android:name=".drawabletest.DrawableTestActivity" />
+        <activity android:name=".soundPoolTest.SoundPoolActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>
