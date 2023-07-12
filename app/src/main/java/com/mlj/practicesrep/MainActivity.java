@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
+import com.mlj.practicesrep.PaintFunctionsTest.PaintFunctionsTestActivity;
 import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
 import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
@@ -79,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //44 paint_functions_test
+        View paint_functions_test = findViewById(R.id.paint_functions_test);
+        paint_functions_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, PaintFunctionsTestActivity.class);
+            startActivity(intent);
+        });
         //43 drawable_test
         View soundPool_test = findViewById(R.id.soundPool_test);
         soundPool_test.setOnClickListener(v -> {
