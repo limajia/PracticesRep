@@ -12,6 +12,15 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/scroll_view_pro_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="scrollViewProTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+
+        <Button
             android:id="@+id/paint_functions_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

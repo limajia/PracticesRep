@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".ScrollViewProTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaintFunctionsTestActivity"
             android:exported="false" />
         <activity
@@ -198,6 +201,7 @@
         <activity android:name=".drawabletest.DrawableTestActivity" />
         <activity android:name=".soundPoolTest.SoundPoolActivity" />
         <activity android:name=".PaintFunctionsTest.PaintFunctionsTestActivity" />
+        <activity android:name=".scrollviewprotest.ScrollViewProTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

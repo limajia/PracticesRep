@@ -53,6 +53,7 @@ import com.mlj.practicesrep.pagejump.PageJumpTestActivity;
 import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.richtexttest.RichTextTestActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
+import com.mlj.practicesrep.scrollviewprotest.ScrollViewProTestActivity;
 import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
 import com.mlj.practicesrep.soundPoolTest.SoundPoolActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
@@ -80,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //45 scroll_view_pro_test
+        View scroll_view_pro_test = findViewById(R.id.scroll_view_pro_test);
+        scroll_view_pro_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ScrollViewProTestActivity.class);
+            startActivity(intent);
+        });
         //44 paint_functions_test
         View paint_functions_test = findViewById(R.id.paint_functions_test);
         paint_functions_test.setOnClickListener(v -> {
