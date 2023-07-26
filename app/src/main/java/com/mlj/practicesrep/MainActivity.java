@@ -26,6 +26,7 @@ import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
 import com.mlj.practicesrep.PaintFunctionsTest.PaintFunctionsTestActivity;
 import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
 import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
+import com.mlj.practicesrep.beyondoutertest.BeyondOuterTestActivity;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
 import com.mlj.practicesrep.bottomsheet.CustomBottomSheetDialog;
@@ -81,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //46 beyond_outer_test
+        View beyond_outer_test = findViewById(R.id.beyond_outer_test);
+        beyond_outer_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, BeyondOuterTestActivity.class);
+            startActivity(intent);
+        });
         //45 scroll_view_pro_test
         View scroll_view_pro_test = findViewById(R.id.scroll_view_pro_test);
         scroll_view_pro_test.setOnClickListener(v -> {

@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/beyond_outer_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="beyondOuterTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/scroll_view_pro_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

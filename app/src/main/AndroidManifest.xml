@@ -10,6 +10,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <permission
+        android:name="com.mlj.practicesrep.permission.playerpermission"
+        android:protectionLevel="normal" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -19,6 +23,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <activity
+            android:name=".BeyondOuterTestActivity"
+            android:exported="false" />
         <activity
             android:name=".ScrollViewProTestActivity"
             android:exported="false" />
@@ -151,7 +158,12 @@
         <activity android:name=".scrollertest.ScrollerTestActivity" />
         <activity android:name=".touchevent.EventActivity" />
         <activity android:name=".mvppattern.MvpActivity" />
-        <activity android:name=".player.PlayerActivity" />
+        <!--测试自定义权限-->
+        <activity
+            android:name=".player.PlayerActivity"
+            android:exported="true"
+            android:permission="com.mlj.practicesrep.permission.playerpermission"/>
+
         <activity android:name=".customdialog.CustomDialogActivity" />
 
         <receiver android:name=".broadcast.StaticReceiver">
@@ -202,6 +214,7 @@
         <activity android:name=".soundPoolTest.SoundPoolActivity" />
         <activity android:name=".PaintFunctionsTest.PaintFunctionsTestActivity" />
         <activity android:name=".scrollviewprotest.ScrollViewProTestActivity" />
+        <activity android:name=".beyondoutertest.BeyondOuterTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

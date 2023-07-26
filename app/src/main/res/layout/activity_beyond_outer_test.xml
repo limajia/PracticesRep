@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".beyondoutertest.BeyondOuterTestActivity">
+
+    <!-- 根布局使用 android:clipChildren="false"-->
+    <FrameLayout
+        android:id="@+id/wrapperview"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:background="#ccc">
+
+        <!--onMeasure指定的宽高时候已经根据布局参数，算完了内部的子View，即TextView-->
+        <!--BeyondView高度已经超出了wrapperview-,只是没有绘制展示出来，如果想要展示出来，设置clipChildren=false-->
+        <com.mlj.practicesrep.beyondoutertest.BeyondView
+            android:id="@+id/beyondView"
+            android:background="#ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="123456789901234567899012345678990123456789901234567899012345678990123456789901234567899012345678990123456789901234567899012345678990123456789901234567899012345678990123456789901234567899012345678990"/>
+        </com.mlj.practicesrep.beyondoutertest.BeyondView>
+    </FrameLayout>
+</FrameLayout>

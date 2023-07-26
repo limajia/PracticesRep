@@ -26,6 +26,12 @@ public class PlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
         mSurfaceView = findViewById(R.id.surface_view);
+        mSurfaceView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println( "docker112233: surfaceView=宽="+ mSurfaceView.getWidth()  + "高=" + mSurfaceView.getHeight());
+            }
+        },3000);
         View testButton = findViewById(R.id.mmmmmmmmmmmm);
         //布局
         View changeSizeBtn = findViewById(R.id.change_size_btn);
@@ -97,11 +103,18 @@ public class PlayerActivity extends AppCompatActivity {
                 }
                 // holder是同一个对象 但是每次Create以后，都要重新设置到player中  但是每次gone 和visible 都会重新播放
                 mMediaPlayer.setDisplay(holder);
+                mMediaPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
+                    @Override
+                    public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+                            Log.d("docker112233", "onVideoSizeChanged: width = " + width + " height = " + height);
+                    }
+                });
                 try {
                     if (!mMediaPlayer.isPlaying()) {
                         mMediaPlayer.setDataSource("https://v-cdn.zjol.com.cn/280443.mp4");
                         mMediaPlayer.prepare();
                         mMediaPlayer.start();
+                        mSurfaceView.getHolder().setFixedSize(200,200);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
