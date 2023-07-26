@@ -4,6 +4,9 @@
     <string name="hello_one_fragment">Hello one fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_two_fragment">Hello two fragment</string>
+    <string name="custom_permission_describe">详细描述：想要获取跳转player页面的权限，要不然看不了视频~~</string>
+    <string name="custom_permission_label">简短：看视频权限</string>
+
     <string name="html_content"><![CDATA[ <font color="#767676">Purchase with</font>
         <font color="#FF5E75">%s</font><font color="#767676"> points?</font>]]></string>
 </resources>

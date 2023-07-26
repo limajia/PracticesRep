@@ -10,9 +10,17 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+
+    <!--android:label="@string/custom_permission_label"
+        android:logo="@mipmap/leak_canary_icon"
+        android:banner="@mipmap/leak_canary_icon" 测试看不到效果-->
     <permission
         android:name="com.mlj.practicesrep.permission.playerpermission"
-        android:protectionLevel="normal" />
+        android:protectionLevel="dangerous"
+        android:description="@string/custom_permission_describe"
+        android:label="@string/custom_permission_label"
+        android:logo="@mipmap/leak_canary_icon"
+        android:banner="@mipmap/leak_canary_icon"/>
 
     <application
         android:name=".App"
