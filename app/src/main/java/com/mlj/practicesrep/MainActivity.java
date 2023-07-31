@@ -46,6 +46,7 @@ import com.mlj.practicesrep.intentservice.IntentServiceTestActivity;
 import com.mlj.practicesrep.leakcanary.LeakCanaryTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.matrixtest.MatrixTestActivity;
+import com.mlj.practicesrep.multipointtest.MultiPointTestActivity;
 import com.mlj.practicesrep.mvppattern.MvpActivity;
 import com.mlj.practicesrep.nestedscrolltopattract.NestedScrollAndTopAttractActivity;
 import com.mlj.practicesrep.notificationtest.NotificationTestActivity;
@@ -82,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //47 multi_point_test
+        View multi_point_test = findViewById(R.id.multi_point_test);
+        multi_point_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MultiPointTestActivity.class);
+            startActivity(intent);
+        });
         //46 beyond_outer_test
         View beyond_outer_test = findViewById(R.id.beyond_outer_test);
         beyond_outer_test.setOnClickListener(v -> {

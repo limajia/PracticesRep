@@ -9,18 +9,18 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-
-    <!--android:label="@string/custom_permission_label"
+    <!--
+android:label="@string/custom_permission_label"
         android:logo="@mipmap/leak_canary_icon"
-        android:banner="@mipmap/leak_canary_icon" 测试看不到效果-->
+        android:banner="@mipmap/leak_canary_icon" 测试看不到效果
+    -->
     <permission
         android:name="com.mlj.practicesrep.permission.playerpermission"
-        android:protectionLevel="dangerous"
+        android:banner="@mipmap/leak_canary_icon"
         android:description="@string/custom_permission_describe"
         android:label="@string/custom_permission_label"
         android:logo="@mipmap/leak_canary_icon"
-        android:banner="@mipmap/leak_canary_icon"/>
+        android:protectionLevel="dangerous" />
 
     <application
         android:name=".App"
@@ -31,6 +31,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <activity
+            android:name=".MultiPointTestActivity"
+            android:exported="false" />
         <activity
             android:name=".BeyondOuterTestActivity"
             android:exported="false" />
@@ -165,13 +168,11 @@
         <activity android:name=".lottietest.LottieTestActivity" />
         <activity android:name=".scrollertest.ScrollerTestActivity" />
         <activity android:name=".touchevent.EventActivity" />
-        <activity android:name=".mvppattern.MvpActivity" />
-        <!--测试自定义权限-->
+        <activity android:name=".mvppattern.MvpActivity" /> <!-- 测试自定义权限 -->
         <activity
             android:name=".player.PlayerActivity"
             android:exported="true"
-            android:permission="com.mlj.practicesrep.permission.playerpermission"/>
-
+            android:permission="com.mlj.practicesrep.permission.playerpermission" />
         <activity android:name=".customdialog.CustomDialogActivity" />
 
         <receiver android:name=".broadcast.StaticReceiver">
@@ -223,6 +224,7 @@
         <activity android:name=".PaintFunctionsTest.PaintFunctionsTestActivity" />
         <activity android:name=".scrollviewprotest.ScrollViewProTestActivity" />
         <activity android:name=".beyondoutertest.BeyondOuterTestActivity" />
+        <activity android:name=".multipointtest.MultiPointTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>
