@@ -59,7 +59,6 @@ public class MultiPointTestActivity extends AppCompatActivity {
 
 //总的来说，规律就是：
 //
-//        Index永远是连续的，在抬起和放下时会变[会重新排序0 1，2] ，在MotionEvent.ACTION_UP之前，前面的id会复用，复用的时候，index也会复用，所有index又冲洗排序了，而id不会变。所以Index用于遍历，id用于行为追踪
 //        ACTION_MOVE时无法得知哪个具体的点被移动（getIndex只会返回一个值，若两个手指在移动呢？），所以获得的index是无效的，只能遍历数组index按id进行操作
 //        常用语句块：
 //
@@ -79,7 +78,7 @@ public class MultiPointTestActivity extends AppCompatActivity {
  * Return the masked action being performed, without pointer index information.
  * Use {@link #getActionIndex} to return the index associated with pointer actions.
  * @return The action, such as {@link #ACTION_DOWN} or {@link #ACTION_POINTER_DOWN}.
-// *
+ **/
 //public final int getActionMasked() {
 //        return nativeGetAction(mNativePtr) & ACTION_MASK;
 //        }
