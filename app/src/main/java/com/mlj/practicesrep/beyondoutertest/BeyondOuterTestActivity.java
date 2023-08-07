@@ -36,6 +36,10 @@ public class BeyondOuterTestActivity extends AppCompatActivity {
     }
 }
 
+//补充结论：也不会超过屏幕宽度
+//docker123:wrapperview.getWidth() = 720 wrapperview.getHeight() = 1386 //设置wrap_content后的大小
+//2023-08-01 18:06:15.940 24016-24016/com.mlj.practicesrep I/System.out: docker123:beyondView.getWidth() = 2000 beyondView.getHeight() = 2000
+
 /*
 * 如果surfaceHolder.setFixedSize(800, 800)，而SurfaceView控件的宽高为400,400. 视频画面会如何显示？
 *

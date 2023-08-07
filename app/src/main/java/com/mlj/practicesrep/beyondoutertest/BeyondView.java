@@ -26,6 +26,6 @@ public class BeyondView extends LinearLayout {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(500,500);
+        setMeasuredDimension(2000,2000);
     }
 }
