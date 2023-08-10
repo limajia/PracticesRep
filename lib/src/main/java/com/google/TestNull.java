@@ -26,6 +26,6 @@ public class TestNull {
         outcvalye = false;//这种是重新赋值了，不是outcvalye.的形式
     }
 
-    Field[] declaredFields = genericClassClass.getDeclaredFields();
-        Type genericType = declaredFields[0].getGenericType();
+//    Field[] declaredFields = genericClassClass.getDeclaredFields();
+//        Type genericType = declaredFields[0].getGenericType();
 }
