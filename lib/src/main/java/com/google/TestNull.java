@@ -1,5 +1,7 @@
 package com.google;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 //https://qa.1r1g.com/sf/ask/711339541/  在java中改变类函数中的布尔值
@@ -23,4 +25,7 @@ public class TestNull {
     public static void testBoolean(Boolean outcvalye) {
         outcvalye = false;//这种是重新赋值了，不是outcvalye.的形式
     }
+
+    Field[] declaredFields = genericClassClass.getDeclaredFields();
+        Type genericType = declaredFields[0].getGenericType();
 }
