@@ -32,6 +32,9 @@ android:label="@string/custom_permission_label"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".DisplayMetricsConfigurationTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".MultiPointTestActivity"
             android:exported="false" />
         <activity
@@ -225,6 +228,7 @@ android:label="@string/custom_permission_label"
         <activity android:name=".scrollviewprotest.ScrollViewProTestActivity" />
         <activity android:name=".beyondoutertest.BeyondOuterTestActivity" />
         <activity android:name=".multipointtest.MultiPointTestActivity" />
+        <activity android:name=".DisplayMetricsConfigurationTest.DisplayMetricsConfigurationTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.mlj.practicesrep.DisplayMetricsConfigurationTest.DisplayMetricsConfigurationTestActivity;
 import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
 import com.mlj.practicesrep.PaintFunctionsTest.PaintFunctionsTestActivity;
 import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
@@ -83,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //48 DisplayMetrics_Configuration_test
+        View DisplayMetrics_Configuration_test = findViewById(R.id.displaymetrics_configuration_test);
+        DisplayMetrics_Configuration_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DisplayMetricsConfigurationTestActivity.class);
+            startActivity(intent);
+        });
         //47 multi_point_test
         View multi_point_test = findViewById(R.id.multi_point_test);
         multi_point_test.setOnClickListener(v -> {

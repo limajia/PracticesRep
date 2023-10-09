@@ -1,5 +1,5 @@
 apply plugin: 'java-library'
-// 这是gradlepluginandasm项目依赖的插件
+// 这是appgradlepluginandasm项目依赖的插件
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
@@ -29,6 +29,7 @@ repositories {
     mavenCentral()
     maven { url "https://dl.google.com/dl/android/maven2/" }
 }
+
 //开发插件需要的库
 dependencies {
     implementation gradleApi()

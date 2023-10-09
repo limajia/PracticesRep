@@ -12,6 +12,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/displaymetrics_configuration_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DisplaymetricsConfigurationTest"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/multi_point_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
