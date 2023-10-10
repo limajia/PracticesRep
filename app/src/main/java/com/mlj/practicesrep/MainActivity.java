@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.DisplayMetricsConfigurationTest.DisplayMetricsConfigurationTestActivity;
 import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
+import com.mlj.practicesrep.MainActivity.MyViewHolder;
 import com.mlj.practicesrep.PaintFunctionsTest.PaintFunctionsTestActivity;
 import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
 import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
@@ -617,4 +618,17 @@ public class MainActivity extends AppCompatActivity {
         //
     }
 
+    // andrid12,返回键行为变更了。只有一个主activity，会退到后台，不会销毁
+    // https://developer.android.google.cn/about/versions/12/behavior-changes-all?hl=zh-cn#back-press
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        System.out.println("docker:主页面backPressed");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("malijia:主页面onDestroy");
+    }
 }

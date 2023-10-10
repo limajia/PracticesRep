@@ -53,6 +53,12 @@ public class MultiPointTestActivity extends AppCompatActivity {
 
         return true; // 返回true表示已处理触摸事件
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("docker: 页面onDestroy");
+    }
 }
 //http://i.lckiss.com/?p=305
 //https://app.yinxiang.com/shard/s8/nl/16515318/72aba6a5-df29-4d28-86ed-c2a453372b6e/ 多点触摸总结
