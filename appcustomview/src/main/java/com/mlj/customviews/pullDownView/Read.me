@@ -1,0 +1,17 @@
+// 修改dialog的高度
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) mScreenCastBrowseBaseView.getLayoutParams();
+        layoutParams.height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+ //layoutParams不设置回去的话，只生效一次，不会触发下次的requestLayout()// 第一次成功 可能是
+
+
+ /// ---以下暂定--/////
+ 对当前View的动画，不会触发View的onMeasure layout draw
+ drgerHelper【实质是父invalidate，如果中间不修改任何view的参数】 invalidete父布局，会使当前的父View 一直ondraw，子view不会调用任何。【除非修改了子view的参数 和 invalidate】
+ mChildView.setLayoutParams(mChildView.getLayoutParams()); requestLayou，父类都会调用。执不执行内部的具体绘制，看有没有变化
+ 父布局执行了requestLayout 子布局也会执行
+ 如果只是invalidate的话，子布局不会执行
+ 以上这些结论待定--可能内部做了优化。draw onDraw
+
+
+ 联系项目中分析 事件传递的过程 及 动画过程中的绘制和重新布局过程

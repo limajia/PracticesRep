@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="UserEnterView">
+        <attr name="defaultString" format="string" />
+        <attr name="viewTextDimension" format="dimension" />
+        <attr name="viewCoverDimension" format="dimension" />
+        <attr name="viewTextColor" format="color" />
+    </declare-styleable>
+</resources>
