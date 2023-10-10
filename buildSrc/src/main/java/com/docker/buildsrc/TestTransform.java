@@ -60,8 +60,8 @@ public class TestTransform extends Transform {
                 replaceFileClass(directoryInput.getFile());
                 //将修改过的字节码copy到dest，就可以实现编译期间干预字节码的目的了, 此目的就是把我们修改之后的文件按照android编译要求放置到本来该放置的位置，以助于apk打包。
                 FileUtils.copyDirectory(directoryInput.getFile(), dest);
-                System.out.println("malijia  from: " + directoryInput.getFile().getAbsolutePath());
-                System.out.println("malijia  dest: " + dest.getAbsolutePath());
+                System.out.println("docker  from: " + directoryInput.getFile().getAbsolutePath());
+                System.out.println("docker  dest: " + dest.getAbsolutePath());
             }
         }
     }
@@ -77,9 +77,9 @@ public class TestTransform extends Transform {
         for (File file : subFile) {
             // 判断是否为文件夹
             if (!file.isDirectory()) {
-                hook(file.getAbsolutePath());
+                hook(file.getAbsolutePath());//这里处理文件
             } else {
-                replaceFileClass(file);
+                replaceFileClass(file);//这里递归处理目录
             }
         }
     }

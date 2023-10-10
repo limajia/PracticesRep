@@ -6,6 +6,7 @@ import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.jetbrains.annotations.NotNull;
 
+// https://blog.csdn.net/Poulfei/article/details/118568911 插件调试步骤
 public class TestPlugin implements Plugin<Project> {
     @Override
     public void apply(@NotNull Project project) {
