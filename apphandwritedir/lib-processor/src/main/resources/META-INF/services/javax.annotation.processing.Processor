@@ -1,0 +1,2 @@
+com.docker.lib_processor.BindingProcessor
+#外层的服务名称不可以改变，是固定的javax.annotation.processing.Processor
