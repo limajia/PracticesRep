@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.example.apptensorflowtest"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // TODO: Add an option to avoid compressing TF Lite model file
+    aaptOptions {
+        noCompress "tflite"//tensorflowlite
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+// Sanity check if you have trained and downloaded TF Lite model.
+preBuild.doFirst {
+    assert file("./src/main/assets/mnist.tflite").exists() :
+            "mnist.tflite not found. Make sure you have trained and " +
+                    "downloaded your TensorFlow Lite model to assets/ folder"
+}
+
+/*
+    org.jetbrains.kotlin:kotlin-stdlib-jdk7 是 Kotlin 标准库的一部分，用于提供 Kotlin 编程语言的基本函数和扩展。
+    jdk7 版本是专为 Java 7 和更高版本的 Java 环境优化的。
+    这个库包括一些 Kotlin 核心函数、标准集合、操作符重载等功能，以便开发者可以更方便地在 Kotlin 代码中编写通用性和可读性更强的代码。
+    这个库通常与 Kotlin 一起使用。
+
+    androidx.core:core-ktx 是 Android 开发的一部分，是 Android 架构组件中的一部分。
+    它提供了一组 Kotlin 扩展函数（KTX），用于简化 Android 应用程序开发中的常见任务。
+    这些扩展函数涵盖了许多 Android 框架的功能，包括视图操作、生命周期管理、资源访问、异步编程等等。
+    core-ktx 使开发者能够以更 Kotlin 友好的方式编写 Android 应用程序代码。
+* */
+dependencies {
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.32"
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // AndroidDraw Library
+    implementation 'com.github.divyanshub024:AndroidDraw:v0.1'
+
+    // Task API
+    implementation "com.google.android.gms:play-services-tasks:17.2.1"
+
+    //TODO: Add TF Lite
+
+    implementation 'org.tensorflow:tensorflow-lite:2.5.0'
+}
