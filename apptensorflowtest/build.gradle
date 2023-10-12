@@ -2,7 +2,21 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+/*
+1.org.jetbrains.kotlin:kotlin-gradle-plugin 的作用
+`org.jetbrains.kotlin:kotlin-gradle-plugin` 是 Kotlin 编程语言的官方 Gradle 插件。它的作用是为 Kotlin 项目提供构建支持，
+允许你使用 Gradle 构建工具来构建和管理 Kotlin 项目。
+总之，`org.jetbrains.kotlin:kotlin-gradle-plugin` 的作用是为 Gradle 构建系统提供 Kotlin 项目的支持，使你能够轻松地使用 Kotlin 编程语言来构建和管理项目，
+同时与其他 Java 或 Groovy 代码协同工作。这个插件是 Kotlin 编程语言的重要组成部分，使开发者能够充分利用 Kotlin 的特性和功能。
 
+2.
+ id 'kotlin' 插件和   id 'org.jetbrains.kotlin.jvm' 插件  和org.jetbrains.kotlin.android 插件 和kotlin.android
+ 关于有没有前缀org.jetbrains和gradle和kotlin-gradle-plugin版本有关系，前两个是一样的，后两个是一样的。
+ 前两个是kotlin的java插件：这是一个通用的java插件，可以写java程序后者后台服务程序；如何在这个项目直接引用这个，会报错Caused by: com.android.build.gradle.internal.BadPluginException: The 'java' plugin has been applied, but it is not compatible with the Android plugins.
+ 怀疑com.android.application已经包含了java插件，导致冲突了。
+
+ 后两个是kotlin的android的插件：插件是专门用于 Android 应用开发的 Kotlin 插件，于配置 Android 项目以允许使用 Kotlin 编写 Android 应用的代码
+* */
 android {
     compileSdkVersion 30
 
