@@ -1,0 +1,1 @@
+在 Android Studio 工程的根目录中 , 创建 buildSrc 目录 , 该目录是特殊目录 , AS 自动为该目录引入了 Groovy / Java / Gradle 的 API 依赖 ,
