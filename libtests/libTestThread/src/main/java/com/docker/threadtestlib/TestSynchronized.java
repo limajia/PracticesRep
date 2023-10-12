@@ -6,8 +6,6 @@ package com.docker.threadtestlib;
 而这个线程尝试获取自己持有锁时，如果成功说明该锁是可重入的，反之则不可重入
 */
 
-import java.util.concurrent.locks.ReentrantLock;
-
 /*虽然一个线程是按顺序执行的，但是可以如下面的例子那样，递归调用执行*/
 public class TestSynchronized {
     public static void main(String[] args) {

@@ -1,15 +1,15 @@
-include ':libTestRxJava'//include ':buildSrc' // 不删除的话 会报错 'buildSrc' cannot be used as a project name as it is a reserved name
-include ':appgradlepluginandasm'
-include ':lib'
-include ':libTestThread'
-include ':app'
 rootProject.name = "PracticesRep"
-include ':libRpc'
-include ':libAlgorithm'
+include ':libtests:libTestRxJava'//include ':buildSrc' // 不删除的话 会报错 'buildSrc' cannot be used as a project name as it is a reserved name
+include ':libtests:lib'
+include ':libtests:libTestThread'
+include ':libtests:libRpc'
+include ':libtests:libAlgorithm'
+include ':app'
+include ':appcustomview'
+include ':appgradlepluginandasm'
 include ':appcontentproviderclient'
 include ':appcontentproviderservice'
 include ':appcustompermissionclient'
-include ':appcustomview'
 include ':apphandwritedir:apphandwrite'
 include ':apphandwritedir:lib-annotation'
 include ':apphandwritedir:lib-processor'

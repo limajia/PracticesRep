@@ -47,7 +47,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class BinaryTree {
     /*递归 可以绘制访问图，每一个结点都会访问三次，当每个点作为Root的时候进行输出*/
