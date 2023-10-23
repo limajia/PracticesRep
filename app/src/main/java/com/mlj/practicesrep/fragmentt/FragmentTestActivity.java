@@ -98,7 +98,8 @@ public class FragmentTestActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_view, fragmentList.get((index++) % 2));
-                fragmentTransaction.commitNowAllowingStateLoss();
+                fragmentTransaction.addToBackStack("");
+                fragmentTransaction.commitAllowingStateLoss();
             }
         });
         Log.d(TAG, "onCreate: ");
@@ -201,8 +202,9 @@ D/FragmentOne: onDetach:
 D/FragmentTwo: onResume: */
 
 
+//（注意：加入回退栈的话，不会走onDetach和onAttach方法，但是视图已经分离了）
 //addBackToStack 就是记住步骤 然后进行反向操作 https://www.cnblogs.com/jiani/p/11796662.html
-//首先fragment事物的提交方式有四种：
+//首先fragment事物的提交方式有四种：now的提交，不允许加入到回退栈。
 //
 ///**
 //* 摘出其中的关键点
