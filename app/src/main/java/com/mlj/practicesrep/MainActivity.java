@@ -61,6 +61,7 @@ import com.mlj.practicesrep.scrollviewprotest.ScrollViewProTestActivity;
 import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
 import com.mlj.practicesrep.soundPoolTest.SoundPoolActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
+import com.mlj.practicesrep.statusbartest.StatusBarTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.testnovlenoedgescroll.TestNoEdgeScrollActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
@@ -85,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //49 状态栏测试
+        View statusBarTest = findViewById(R.id.status_bar_test);
+        statusBarTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, StatusBarTestActivity.class);
+            startActivity(intent);
+        });
         //48 DisplayMetrics_Configuration_test
         View DisplayMetrics_Configuration_test = findViewById(R.id.displaymetrics_configuration_test);
         DisplayMetrics_Configuration_test.setOnClickListener(v -> {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffff"
+    android:orientation="vertical">
+    <!--android:fitsSystemWindows="true"-->
+
+    <Button
+        android:id="@+id/btn_light_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff00"
+        android:text="lightStatusBar/黑色字体[图标]"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_white_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="白色字体[图标]"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_status_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改状态栏颜色"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_show_below_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="沉浸显示到状态栏之下"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_hide_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="隐藏状态栏/全屏显示"
+        android:textAllCaps="false" />
+</LinearLayout>
