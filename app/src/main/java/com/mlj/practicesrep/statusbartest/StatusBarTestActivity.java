@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -14,6 +15,8 @@ import com.mlj.practicesrep.R;
 /**
  * @author
  * https://juejin.cn/post/7203563038301061181#heading-4 Android 状态栏的正确使用方式
+ *
+ * 使用向后兼容类androidx的 WindowInsetsControllerCompat来兼容处理早期版本的状态栏一致.
  */
 public class StatusBarTestActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,14 +56,17 @@ public class StatusBarTestActivity extends AppCompatActivity implements View.OnC
     * */
     void transparentStatusBar(Window window) {
         //start0
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);//这就是半透明的颜色
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         //end0
 
         //start1 状态栏显示，且内容显示在状态栏下面
         int systemUiVisibility = window.getDecorView().getSystemUiVisibility();
+        System.out.println("dockerStatus：systemUiVisibility = " + systemUiVisibility);
         systemUiVisibility = systemUiVisibility | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+        System.out.println("dockerStatus：setSystemUiVisibility() = " + systemUiVisibility);
         window.getDecorView().setSystemUiVisibility(systemUiVisibility);
+        //SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN 这个flag表示Activity全屏显示，但状态栏不会被隐藏，依然可见
         //end1
 
         window.setStatusBarColor(Color.TRANSPARENT);
@@ -80,14 +86,22 @@ public class StatusBarTestActivity extends AppCompatActivity implements View.OnC
     }
 
     void restoreStatusBar(Window window) {
-        // 清除设置的标志位和颜色
-        window.clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(Color.BLACK); // 设置默认状态栏颜色
+        // 清除设置的标志位和颜色,使用这段代码之后，恢复会失效
+        //window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);// 设置默认状态栏透明度
+        //window.clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
         // 还原系统UI可见性设置
+        // Deprecated
+        //SystemUiVisibility flags are deprecated. Use WindowInsetsController instead. 这是Android 11(R）才添加的api
         int systemUiVisibility = window.getDecorView().getSystemUiVisibility();
-        systemUiVisibility &= ~(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        systemUiVisibility &= ~(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE); //移除这两个位置的标识
         window.getDecorView().setSystemUiVisibility(systemUiVisibility);
+        window.setStatusBarColor(Color.RED); //显示后，因为显示内容再状态栏下面，所以状态栏必须设置一个颜色，设置透明是不生效的
+        QMUIStatusBarHelper.setStatusBarLightMode(this);
+        //注意！！！！！
+        //View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN和View.SYSTEM_UI_FLAG_LAYOUT_STABLE来移除布局到状态栏下方的标志位。
+        //但是，这两个标志位主要是用于告知系统应用全屏布局，并不直接控制布局是否在状态栏下方。
+        //需要考虑使用WindowInsetsController中的方法，例如hide(WindowInsets.Type.statusBars())来隐藏状态栏。
     }
 
 
