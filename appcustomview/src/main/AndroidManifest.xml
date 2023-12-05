@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".VerticalDrawerLayoutActivity"
+            android:exported="false" />
         <activity android:name=".customviewpractice.CustomViewPracticesActivity" />
         <activity android:name=".layoutTransition.LayoutTransitionActivity" />
         <activity android:name=".userEnter.UserEnterActivity" />
@@ -21,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".verticaldrawerlayout.VerticalDrawerLayoutActivity" />
     </application>
 
 </manifest>

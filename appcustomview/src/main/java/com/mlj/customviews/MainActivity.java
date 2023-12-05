@@ -14,6 +14,7 @@ import com.mlj.customviews.customviewpractice.CustomViewPracticesActivity;
 import com.mlj.customviews.layoutTransition.LayoutTransitionActivity;
 import com.mlj.customviews.pullDownView.PullDownActivity;
 import com.mlj.customviews.userEnter.UserEnterActivity;
+import com.mlj.customviews.verticaldrawerlayout.VerticalDrawerLayoutActivity;
 
 /**
  * @author docker
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         userEnterView.setOnClickListener(this);
         View layoutTransition = findViewById(R.id.layoutTransition);
         layoutTransition.setOnClickListener(this);
+        findViewById(R.id.goVerticalDrawerLayout).setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         ComponentName componentName;
         switch (view.getId()) {
+            case R.id.goVerticalDrawerLayout:
+                componentName = new ComponentName(MainActivity.this, VerticalDrawerLayoutActivity.class);
+                break;
             case R.id.goCountDownView:
                 componentName = new ComponentName(MainActivity.this, CountDownViewActivity.class);
                 break;

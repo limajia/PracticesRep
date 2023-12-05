@@ -11,6 +11,13 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/goVerticalDrawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="goVerticalDrawerLayout"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/goCustomView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
