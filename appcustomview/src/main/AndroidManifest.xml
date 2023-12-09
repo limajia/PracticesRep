@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".BubbleViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".VerticalDrawerLayoutActivity"
             android:exported="false" />
         <activity android:name=".customviewpractice.CustomViewPracticesActivity" />
@@ -25,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".verticaldrawerlayout.VerticalDrawerLayoutActivity" />
+        <activity android:name=".bubbleview.BubbleViewActivity" />
     </application>
 
 </manifest>

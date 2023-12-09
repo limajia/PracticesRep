@@ -8,8 +8,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mlj.customviews.R;
 import com.mlj.customviews.CountdownView.CountDownViewActivity;
+import com.mlj.customviews.bubbleview.BubbleViewActivity;
 import com.mlj.customviews.customviewpractice.CustomViewPracticesActivity;
 import com.mlj.customviews.layoutTransition.LayoutTransitionActivity;
 import com.mlj.customviews.pullDownView.PullDownActivity;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View layoutTransition = findViewById(R.id.layoutTransition);
         layoutTransition.setOnClickListener(this);
         findViewById(R.id.goVerticalDrawerLayout).setOnClickListener(this);
+        findViewById(R.id.goBubblePopupWindow).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         ComponentName componentName;
         switch (view.getId()) {
+            case R.id.goBubblePopupWindow:
+                componentName = new ComponentName(MainActivity.this, BubbleViewActivity.class);
+                break;
             case R.id.goVerticalDrawerLayout:
                 componentName = new ComponentName(MainActivity.this, VerticalDrawerLayoutActivity.class);
                 break;

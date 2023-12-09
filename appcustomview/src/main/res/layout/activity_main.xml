@@ -11,6 +11,13 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/goBubblePopupWindow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="goBubblePopupWindow"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/goVerticalDrawerLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
