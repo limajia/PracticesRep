@@ -70,6 +70,7 @@ import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
 import com.mlj.practicesrep.viewpage2setcurrent.ViewPager2CurrentPageTestActivity;
 import com.mlj.practicesrep.viewpagesetcurrent.ViewPagerCurrentPageTestActivity;
 import com.mlj.practicesrep.webview.WebViewTestActivity;
+import com.mlj.practicesrep.wrapradiogrouptest.WrapperRadioGroupTestActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -86,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //50 包裹的RadioGroupTest
+        View radioGroupWrapperTest = findViewById(R.id.wrapper_radiogroup_test);
+        radioGroupWrapperTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, WrapperRadioGroupTestActivity.class);
+            startActivity(intent);
+        });
         //49 状态栏测试
         View statusBarTest = findViewById(R.id.status_bar_test);
         statusBarTest.setOnClickListener(v -> {

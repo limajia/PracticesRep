@@ -9,7 +9,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#ff0000"
         tools:context=".MainActivity">
+
+        <com.mlj.practicesrep.ProgressSeekBar
+            android:id="@+id/psb_theme_prayer_duration"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:max="31"
+            android:paddingHorizontal="12dp"
+            android:progress="7"
+            android:thumb="@drawable/theme_prayer_seekbar_thumb" />
+
+        <Button
+            android:id="@+id/wrapper_radiogroup_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="包裹RadioGroup测试"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/status_bar_test"

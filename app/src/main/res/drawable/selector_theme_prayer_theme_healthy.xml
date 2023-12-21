@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中状态的背景 -->
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:width="64dp" android:height="64dp" android:gravity="center">
+                <bitmap android:src="@drawable/icon_theme_prayer_theme_healthy" />
+            </item>
+            <item android:width="64dp" android:height="64dp">
+                <shape android:shape="oval">
+                    <stroke android:width="3dp" android:color="@color/white" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- 未选中状态的背景 -->
+    <item android:state_checked="false">
+        <layer-list>
+            <item android:width="64dp" android:height="64dp" android:gravity="center">
+                <bitmap android:src="@drawable/icon_theme_prayer_theme_healthy" />
+            </item>
+        </layer-list>
+    </item>
+</selector>

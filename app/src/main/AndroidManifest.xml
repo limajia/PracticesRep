@@ -32,6 +32,9 @@ android:label="@string/custom_permission_label"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".WrapperRadioGroupTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".DisplayMetricsConfigurationTestActivity"
             android:exported="false" />
         <activity
@@ -230,6 +233,7 @@ android:label="@string/custom_permission_label"
         <activity android:name=".multipointtest.MultiPointTestActivity" />
         <activity android:name=".DisplayMetricsConfigurationTest.DisplayMetricsConfigurationTestActivity" />
         <activity android:name=".statusbartest.StatusBarTestActivity" />
+        <activity android:name=".wrapradiogrouptest.WrapperRadioGroupTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>
