@@ -12,6 +12,14 @@
         android:background="#ff0000"
         tools:context=".MainActivity">
 
+        <Button
+            android:id="@+id/snap_help_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SnapHelper测试"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
         <com.mlj.practicesrep.ProgressSeekBar
             android:id="@+id/psb_theme_prayer_duration"
             android:layout_width="match_parent"

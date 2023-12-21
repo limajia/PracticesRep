@@ -58,6 +58,7 @@ import com.mlj.practicesrep.player.PlayerActivity;
 import com.mlj.practicesrep.richtexttest.RichTextTestActivity;
 import com.mlj.practicesrep.scrollertest.ScrollerTestActivity;
 import com.mlj.practicesrep.scrollviewprotest.ScrollViewProTestActivity;
+import com.mlj.practicesrep.snaphelptest.SnapHelpTestActivity;
 import com.mlj.practicesrep.sonparnesviewtest.SonParentViewTestActivity;
 import com.mlj.practicesrep.soundPoolTest.SoundPoolActivity;
 import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
@@ -87,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //51 snap_help_test
+        View snapHelperTest = findViewById(R.id.snap_help_test);
+        snapHelperTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SnapHelpTestActivity.class);
+            startActivity(intent);
+        });
         //50 包裹的RadioGroupTest
         View radioGroupWrapperTest = findViewById(R.id.wrapper_radiogroup_test);
         radioGroupWrapperTest.setOnClickListener(v -> {
