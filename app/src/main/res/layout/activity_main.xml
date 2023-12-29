@@ -13,6 +13,14 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/refresh_layout_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RefreshLayout测试"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+        <Button
             android:id="@+id/snap_help_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

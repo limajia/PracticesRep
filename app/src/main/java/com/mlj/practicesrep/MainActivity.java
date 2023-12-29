@@ -28,6 +28,7 @@ import com.mlj.practicesrep.MainActivity.MyViewHolder;
 import com.mlj.practicesrep.PaintFunctionsTest.PaintFunctionsTestActivity;
 import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
 import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
+import com.mlj.practicesrep.RefreshLayoutTest.RefreshLayoutTestActivity;
 import com.mlj.practicesrep.beyondoutertest.BeyondOuterTestActivity;
 import com.mlj.practicesrep.bindertest.client.BinderTestActivity;
 import com.mlj.practicesrep.blockcanary.BlockCanaryTestActivity;
@@ -88,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //52 refresh_layout_test
+        View refreshLayoutTest = findViewById(R.id.refresh_layout_test);
+        refreshLayoutTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RefreshLayoutTestActivity.class);
+            startActivity(intent);
+        });
         //51 snap_help_test
         View snapHelperTest = findViewById(R.id.snap_help_test);
         snapHelperTest.setOnClickListener(v -> {
