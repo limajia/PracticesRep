@@ -32,6 +32,9 @@ android:label="@string/custom_permission_label"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".TextViewLayoutTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".RefreshLayoutTestActivity"
             android:exported="false" />
         <activity
@@ -242,6 +245,7 @@ android:label="@string/custom_permission_label"
         <activity android:name=".wrapradiogrouptest.WrapperRadioGroupTestActivity" />
         <activity android:name=".snaphelptest.SnapHelpTestActivity" />
         <activity android:name=".RefreshLayoutTest.RefreshLayoutTestActivity" />
+        <activity android:name=".textviewlayouttest.TextViewLayoutTestActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>

@@ -13,6 +13,15 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/textview_layout_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextViewLayout测试"
+            android:textAllCaps="false"
+            tools:ignore="HardcodedText" />
+
+
+        <Button
             android:id="@+id/refresh_layout_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

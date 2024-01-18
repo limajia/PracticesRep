@@ -66,6 +66,7 @@ import com.mlj.practicesrep.sqllite.SqlLiteTestTestActivity;
 import com.mlj.practicesrep.statusbartest.StatusBarTestActivity;
 import com.mlj.practicesrep.tabhosttest.TabHostTestActivity;
 import com.mlj.practicesrep.testnovlenoedgescroll.TestNoEdgeScrollActivity;
+import com.mlj.practicesrep.textviewlayouttest.TextViewLayoutTestActivity;
 import com.mlj.practicesrep.touchevent.EventActivity;
 import com.mlj.practicesrep.translucentTest.TranslucentActivity;
 import com.mlj.practicesrep.viewmainfun.TestViewMainFunsActivity;
@@ -89,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //53 textview_layout_test
+        View textViewLayoutTest = findViewById(R.id.textview_layout_test);
+        textViewLayoutTest.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TextViewLayoutTestActivity.class);
+            startActivity(intent);
+        });
         //52 refresh_layout_test
         View refreshLayoutTest = findViewById(R.id.refresh_layout_test);
         refreshLayoutTest.setOnClickListener(v -> {
