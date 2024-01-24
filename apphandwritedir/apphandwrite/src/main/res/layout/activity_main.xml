@@ -11,10 +11,17 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/event_bus_btn"
+            android:id="@+id/okhttp_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HandEventBus"
+            android:text="HandOkHttp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/butterknife_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HandButterKnife"
             android:textAllCaps="false" />
 
         <Button
@@ -25,10 +32,10 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/butterknife_btn"
+            android:id="@+id/event_bus_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HandButterKnife"
+            android:text="HandEventBus"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
