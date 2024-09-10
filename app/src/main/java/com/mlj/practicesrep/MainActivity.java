@@ -47,6 +47,7 @@ import com.mlj.practicesrep.hooktest.HookTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.intentservice.IntentServiceTestActivity;
 import com.mlj.practicesrep.leakcanary.LeakCanaryTestActivity;
+import com.mlj.practicesrep.lockscreenontest.LockScreenOnTestActivity;
 import com.mlj.practicesrep.lottietest.LottieTestActivity;
 import com.mlj.practicesrep.matrixtest.MatrixTestActivity;
 import com.mlj.practicesrep.multipointtest.MultiPointTestActivity;
@@ -90,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //54 lock_screen_on_test
+        View lock_screen_on_test_Test = findViewById(R.id.lock_screen_on_test);
+        lock_screen_on_test_Test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LockScreenOnTestActivity.class);
+            startActivity(intent);
+        });
         //53 textview_layout_test
         View textViewLayoutTest = findViewById(R.id.textview_layout_test);
         textViewLayoutTest.setOnClickListener(v -> {

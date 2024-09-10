@@ -1,8 +1,9 @@
 package com.docker.handwrite.handokhttp.net;
 
-import android.support.annotation.NonNull;
 
-import com.update.net.utils.L;
+import androidx.annotation.NonNull;
+
+import com.docker.handwrite.handokhttp.net.utils.L;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

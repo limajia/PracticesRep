@@ -14,3 +14,5 @@
 .externalNativeBuild
 */bin
 ajcore.*
+.vscode
+bin/

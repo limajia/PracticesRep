@@ -1,6 +1,7 @@
 package com.docker.handwrite.handokhttp.net;
 
-import com.update.net.utils.TextUtils;
+
+import com.docker.handwrite.handokhttp.net.utils.TextUtils;
 
 import java.net.MalformedURLException;
 import java.net.URL;
