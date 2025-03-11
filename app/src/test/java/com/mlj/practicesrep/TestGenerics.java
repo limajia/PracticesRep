@@ -38,7 +38,7 @@ public class TestGenerics {
     public void maineeee() throws NoSuchMethodException, NoSuchFieldException {
         //1.
         System.out.println("测试泛型反射 方法返回值");
-        Method method = MyClass.class.getMethod("getStringList", null);
+        Method method = MyClass.class.getMethod("getStringList", (Class<?>) null);
         System.out.println(method.getReturnType());
         Type retrunType = method.getGenericReturnType();
         System.out.println(retrunType);
