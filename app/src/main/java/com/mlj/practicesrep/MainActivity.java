@@ -24,7 +24,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.mlj.practicesrep.DisplayMetricsConfigurationTest.DisplayMetricsConfigurationTestActivity;
 import com.mlj.practicesrep.FileProvidertest.FileProviderTestActivity;
-import com.mlj.practicesrep.MainActivity.MyViewHolder;
 import com.mlj.practicesrep.PaintFunctionsTest.PaintFunctionsTestActivity;
 import com.mlj.practicesrep.PropertyanimTest.PropertyanimTestActivity;
 import com.mlj.practicesrep.RecyclerViewTest.RecyclerViewTestActivity;
@@ -43,6 +42,7 @@ import com.mlj.practicesrep.drawabletest.DrawableTestActivity;
 import com.mlj.practicesrep.floatbtntest.FloatBtnTestActivity;
 import com.mlj.practicesrep.floatwindowtest.FloatWidowTestActivity;
 import com.mlj.practicesrep.fragmentt.FragmentTestActivity;
+import com.mlj.practicesrep.fullscreenintent.FullScreenIntentTestActivity;
 import com.mlj.practicesrep.hooktest.HookTestActivity;
 import com.mlj.practicesrep.includetest.IncludeTestActivity;
 import com.mlj.practicesrep.intentservice.IntentServiceTestActivity;
@@ -91,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //55 full_screen_intent_test
+        View full_screen_intent_test = findViewById(R.id.full_screen_intent_test);
+        full_screen_intent_test.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FullScreenIntentTestActivity.class);
+            startActivity(intent);
+        });
+
         //54 lock_screen_on_test
         View lock_screen_on_test_Test = findViewById(R.id.lock_screen_on_test);
         lock_screen_on_test_Test.setOnClickListener(v -> {

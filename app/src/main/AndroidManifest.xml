@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mlj.practicesrep">
+    package="com.mlj.practicesrep" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     <!--
 android:label="@string/custom_permission_label"
         android:logo="@mipmap/leak_canary_icon"
@@ -30,7 +31,13 @@ android:label="@string/custom_permission_label"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" >
+        <activity
+            android:name=".FullScreenIntentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FullScreenIntenActivity"
+            android:exported="false" />
         <activity
             android:name=".LockScreenOnTestActivity"
             android:exported="false" />
@@ -69,14 +76,14 @@ android:label="@string/custom_permission_label"
             android:exported="false" />
         <activity
             android:name=".PropertyanimTestActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".RecyclerViewTestActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -107,14 +114,14 @@ android:label="@string/custom_permission_label"
             android:exported="false" />
         <activity
             android:name=".constraint.ConstraintTestActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".webview.WebViewTestActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -166,7 +173,7 @@ android:label="@string/custom_permission_label"
             android:name=".bindertest.server.RemoteService"
             android:enabled="true"
             android:exported="true"
-            android:process=":remote">
+            android:process=":remote" >
             <intent-filter>
                 <action android:name="com.docker.ipc" />
 
@@ -193,7 +200,7 @@ android:label="@string/custom_permission_label"
             android:permission="com.mlj.practicesrep.permission.playerpermission" />
         <activity android:name=".customdialog.CustomDialogActivity" />
 
-        <receiver android:name=".broadcast.StaticReceiver">
+        <receiver android:name=".broadcast.StaticReceiver" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
@@ -201,7 +208,7 @@ android:label="@string/custom_permission_label"
             </intent-filter>
         </receiver>
 
-        <activity android:name=".broadcast.BroadCastActivity">
+        <activity android:name=".broadcast.BroadCastActivity" >
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -209,7 +216,7 @@ android:label="@string/custom_permission_label"
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -219,7 +226,7 @@ android:label="@string/custom_permission_label"
         <activity android:name=".viewpage2setcurrent.ViewPager2CurrentPageTestActivity" />
         <activity android:name=".notificationtest.NotificationTestActivity" />
         <activity android:name=".pagejump.PageJumpTestActivity" />
-        <activity android:name=".pagejump.PageJumpDesActivity">
+        <activity android:name=".pagejump.PageJumpDesActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -250,6 +257,8 @@ android:label="@string/custom_permission_label"
         <activity android:name=".RefreshLayoutTest.RefreshLayoutTestActivity" />
         <activity android:name=".textviewlayouttest.TextViewLayoutTestActivity" />
         <activity android:name=".lockscreenontest.LockScreenOnTestActivity" />
+        <activity android:name=".fullscreenintent.FullScreenIntentTestActivity" />
+        <activity android:name=".fullscreenintent.FullScreenIntentActivity" />
 
         <service android:name=".intentservice.IntentServiceTestActivity$CustomIntentService" />
     </application>
