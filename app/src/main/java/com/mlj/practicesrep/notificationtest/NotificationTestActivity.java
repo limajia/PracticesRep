@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.AudioManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -65,6 +66,44 @@ public class NotificationTestActivity extends AppCompatActivity {
         mNotification5.setOnClickListener(v -> {
             sendNotification5("发送一个消息" + new Random().nextInt(1000));
         });
+        //AudioManger 拿到通知音量
+        AudioManager audioManager = (AudioManager)(this.getSystemService(Context.AUDIO_SERVICE));
+        int streamMaxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_NOTIFICATION);
+        System.out.println("audioManager: streamMaxVolume="+streamMaxVolume);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            int streamMinVolume = audioManager.getStreamMinVolume(AudioManager.STREAM_NOTIFICATION);
+            System.out.println("audioManager: streamMinVolume="+streamMinVolume);
+        }
+        int streamVolume = audioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
+        System.out.println("audioManager: streamVolume="+streamVolume);
+        audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,7,AudioManager.FLAG_SHOW_UI);
+
+        /*
+        * flags 参数的作用
+flags 参数指定了设置音量时的行为，例如是否显示音量调整 UI、是否强制设置音量等。它的值通常来自 AudioManager 类中定义的常量。
+
+可用的取值范围（标志常量）
+以下是 AudioManager 中与 setStreamVolume() 相关的常用标志：
+
+0
+表示没有特殊行为，直接设置音量，不显示 UI。这是默认值，也是你之前代码中使用的值。
+示例：audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, 0)
+AudioManager.FLAG_SHOW_UI (值为 1)
+显示音量调整的用户界面（例如音量条），让用户看到音量变化。
+示例：audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, AudioManager.FLAG_SHOW_UI)
+AudioManager.FLAG_PLAY_SOUND (值为 4)
+在设置音量时播放提示音（如果适用），以便用户听到音量变化的效果。
+示例：audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, AudioManager.FLAG_PLAY_SOUND)
+AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE (值为 8)
+移除与音量相关的提示音和振动（通常用于静音场景）。
+示例：audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE)
+AudioManager.FLAG_VIBRATE (值为 16)
+在设置音量时触发振动（如果设备支持且振动设置已启用）。
+示例：audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, AudioManager.FLAG_VIBRATE)
+AudioManager.FLAG_ALLOW_RINGER_MODES (值为 2)
+允许在设置音量时影响响铃模式（例如在静音模式下仍可调整音量）。
+示例：audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, AudioManager.FLAG_ALLOW_RINGER_MODES)
+        * */
     }
 
     private void sendNotification5(String messageBody) {
